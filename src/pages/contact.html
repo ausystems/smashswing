@@ -1,0 +1,59 @@
+<section class="page-head" aria-labelledby="ph">
+  <div class="wrap page-head__in">
+    <p class="page-head__label mono"><span>Contact</span><span>Reply within one business day</span></p>
+    <h1 class="d1 page-head__title" id="ph">Book a demo.</h1>
+    <div class="page-head__aside">
+      <p class="lead">See it in Lewisville, or we'll bring it to you. Tell us about the room and we'll come back with the format that fits.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-label="Contact details and form">
+  <div class="wrap contact__grid">
+    <div class="contact__info">
+      <dl class="spec mono-lg">
+        <div class="spec__row"><dt>Showroom</dt><dd>550 W Round Grove Rd, Suite 500<br>Lewisville, TX 75067</dd></div>
+        <div class="spec__row"><dt>Visits</dt><dd>By appointment</dd></div>
+        <div class="spec__row" data-placeholder="true" data-asset="Contact email · confirm"><dt>Email</dt><dd><a href="mailto:hello@smashswing.com">hello@smashswing.com</a></dd></div>
+      </dl>
+      <div class="cells contact__steps">
+        <div class="cell"><div class="cell__body"><p class="cell__idx mono">01</p><h3 class="cell__title h4">We call within one business day</h3><p class="cell__copy small">A short conversation about the room: square footage, ceiling height, what plays there today.</p></div></div>
+        <div class="cell"><div class="cell__body"><p class="cell__idx mono">02</p><h3 class="cell__title h4">A twenty-minute walkthrough</h3><p class="cell__copy small">Both formats, the games, the numbers from Mequon and Lewisville.</p></div></div>
+        <div class="cell"><div class="cell__body"><p class="cell__idx mono">03</p><h3 class="cell__title h4">A showroom session or a site visit</h3><p class="cell__copy small">Hit balls at the hundred-foot screen in Lewisville, or we bring a bay to you.</p></div></div>
+      </div>
+      <div class="media media--16x9 media--bw" data-placeholder="true" data-asset="Showroom still"><img src="/img/still-flags.webp" alt="" width="1600" height="900" loading="lazy" decoding="async"></div>
+    </div>
+
+    <div class="contact__form">
+      <form class="form" id="contact-form" novalidate>
+        <div class="form__row">
+          <div class="field"><label class="field__label mono" for="f-name">Name</label><input class="field__input" id="f-name" name="name" type="text" autocomplete="name" required><p class="field__error small">Enter your name.</p></div>
+          <div class="field"><label class="field__label mono" for="f-email">Email</label><input class="field__input" id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required><p class="field__error small">Enter a valid email address.</p></div>
+          <div class="field"><label class="field__label mono" for="f-phone">Phone <span class="muted">(optional)</span></label><input class="field__input" id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel"></div>
+          <div class="field"><label class="field__label mono" for="f-venue">Venue or company</label><input class="field__input" id="f-venue" name="venue" type="text" autocomplete="organization" required><p class="field__error small">Tell us the venue.</p></div>
+          <div class="field field--wide"><label class="field__label mono" for="f-type">Venue type</label>
+            <select class="field__input" id="f-type" name="type">
+              <option value="">Choose one</option>
+              <option>Golf club</option><option>Entertainment venue</option><option>Driving range or pro shop</option><option>Developer or landlord</option><option>Municipal or parks</option><option>Other</option>
+            </select>
+          </div>
+          <fieldset class="field field--wide"><legend class="field__label mono">I'm interested in</legend>
+            <div class="choice">
+              <label><input type="radio" name="interest" value="simulator" checked><span>Multiplayer Simulator</span></label>
+              <label><input type="radio" name="interest" value="range"><span>Cinematic Indoor Range</span></label>
+              <label><input type="radio" name="interest" value="unsure"><span>Not sure yet</span></label>
+            </div>
+          </fieldset>
+          <div class="field field--wide"><label class="field__label mono" for="f-msg">Message</label><textarea class="field__input" id="f-msg" name="message" rows="4" placeholder="Square footage, ceiling height, what plays there today."></textarea></div>
+        </div>
+        <button class="btn btn--solid btn--lg" type="submit">Book a demo</button>
+        <p class="small muted">No mailing list. One reply, from a person.</p>
+      </form>
+      <div class="form__done" id="contact-done" hidden>
+        <p class="h4">Thanks. We'll be in touch within one business day.</p>
+        <p class="small muted" style="margin-top:12px">In the meantime, the Technology page explains what makes the screen hit back.</p>
+        <p style="margin-top:24px"><a class="link" href="/technology/">See the technology</a></p>
+      </div>
+    </div>
+  </div>
+</section>

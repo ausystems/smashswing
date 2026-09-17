@@ -1,0 +1,22 @@
+/* ------------------------------------------------------------------
+   Layout — container, 12-column grid, section rhythm
+   ------------------------------------------------------------------ */
+.container { width: var(--content); margin-inline: auto; position: relative; z-index: 2; }
+.grid { display: grid; grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr)); column-gap: var(--gutter); }
+
+.section { position: relative; }
+.section--bone { background: var(--bone); color: var(--black); padding-block: var(--pad-section); }
+.section--black { background: var(--black); color: var(--white); }
+
+/* bands are sized by media; no padding */
+.band { position: relative; background: var(--black); color: var(--white); }
+
+/* generic media frame */
+.media { position: relative; overflow: hidden; border-radius: var(--r-media); background: var(--black); }
+.media > img, .media > video, .media > canvas { width: 100%; height: 100%; object-fit: cover; }
+.media--4x3 { aspect-ratio: 4 / 3; }
+.media--3x2 { aspect-ratio: 3 / 2; }
+.media--16x9 { aspect-ratio: 16 / 9; }
+
+/* off-screen performance for the lower half of the page */
+.cv-auto { content-visibility: auto; }

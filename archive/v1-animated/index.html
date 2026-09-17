@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SmashSwing Immersive — Everyone hits at once</title>
+  <meta name="description" content="Patent-pending multi-player, multi-ball-tracking golf. Three to twenty players hit real balls into one screen at the same moment, and the screen hits back. Book a demo in Lewisville, Texas.">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 fill=%27%23000%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%276%27 fill=%27%23FF2E6B%27/%3E%3C/svg%3E">
+  <link rel="preload" href="/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/martian-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/img/hero-poster.webp" as="image" fetchpriority="high">
+  <link rel="stylesheet" href="/src/styles/reset.css">
+  <link rel="stylesheet" href="/src/styles/tokens.css">
+  <link rel="stylesheet" href="/src/styles/base.css">
+  <link rel="stylesheet" href="/src/styles/layout.css">
+  <link rel="stylesheet" href="/src/styles/sections.css">
+</head>
+<body>
+
+  <!-- preloader -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__count" id="preloader-count">000</div>
+    <div class="preloader__rule"><span class="preloader__fill" id="preloader-fill"></span></div>
+  </div>
+
+  <!-- visible grid -->
+  <div class="grid-lines" id="grid-lines" data-theme="dark" aria-hidden="true">
+    <div class="grid-lines__inner">
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+    </div>
+  </div>
+
+  <!-- cursor: the impact dot -->
+  <div class="cursor" id="cursor" aria-hidden="true"><span class="cursor__label">DRAG</span></div>
+
+  <!-- nav -->
+  <header class="nav" id="nav" data-nav-theme="dark">
+    <a class="nav__logo" href="/">SmashSwing</a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="/products">Products</a>
+      <a href="/technology">Technology</a>
+      <a href="/case-studies">Case studies</a>
+    </nav>
+    <a class="nav__cta btn btn--solid" href="/contact">Book a demo</a>
+    <button class="nav__burger" id="nav-burger" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span></button>
+  </header>
+  <div class="menu" id="nav-menu" aria-hidden="true">
+    <nav class="menu__links" aria-label="Mobile">
+      <a class="t-large" href="/products"><span class="line"><span class="line__in">Products</span></span></a>
+      <a class="t-large" href="/technology"><span class="line"><span class="line__in">Technology</span></span></a>
+      <a class="t-large" href="/case-studies"><span class="line"><span class="line__in">Case studies</span></span></a>
+    </nav>
+    <a class="menu__cta btn btn--lg btn--smash" href="/contact">Book a demo</a>
+  </div>
+
+  <main id="main">
+
+    <!-- 01 · HERO -->
+    <section class="hero band is-pre" id="hero" data-theme="dark" aria-labelledby="hero-h">
+      <div class="hero__video" data-placeholder="true" data-asset="Hero video">
+        <div class="hero__plate" id="hero-plate">
+          <img class="hero__poster" src="/img/hero-poster.webp" alt="" width="1920" height="1080" fetchpriority="high" decoding="async">
+          <video id="hero-video" class="hero__vid" autoplay muted playsinline loop preload="auto" poster="/img/hero-poster.webp" aria-hidden="true">
+            <source src="/video/hero-placeholder.av1.mp4" type='video/mp4; codecs="av01.0.08M.08"'>
+            <source src="/video/hero-placeholder.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="hero__grade"></div>
+        <span class="dot hero__dot" id="hero-dot"></span>
+      </div>
+
+      <p class="hero__margin" id="hero-margin"><span>SmashSwing Immersive</span><span>Lewisville TX</span></p>
+
+      <div class="container hero__content" id="hero-content">
+        <div class="grid hero__grid">
+          <h1 class="hero__headline t-mega" id="hero-h">
+            <span class="line"><span class="line__in">Everyone</span></span>
+            <span class="line"><span class="line__in">hits at</span></span>
+            <span class="line"><span class="line__in hero__turn">once.</span></span>
+          </h1>
+          <div class="hero__actions" id="hero-actions">
+            <a class="btn btn--lg btn--primary" href="/contact">Book a demo</a>
+            <a class="btn btn--lg btn--ghost" href="#contact">See the technology</a>
+          </div>
+          <p class="hero__lead t-lead" id="hero-lead">Three to twenty players hitting the same screen in the same second. Not a simulator with a queue. A room that hits back.</p>
+        </div>
+
+        <button class="cbtn hero__control" id="hero-control" aria-label="Pause video" aria-pressed="false">
+          <svg viewBox="0 0 16 16" aria-hidden="true" class="ico-pause"><rect x="3" y="2" width="3.5" height="12" fill="currentColor"/><rect x="9.5" y="2" width="3.5" height="12" fill="currentColor"/></svg>
+          <svg viewBox="0 0 16 16" aria-hidden="true" class="ico-play"><path d="M4 2l10 6-10 6z" fill="currentColor"/></svg>
+        </button>
+
+        <div class="hero__rail" id="hero-rail">
+          <span class="hero__rule" id="hero-rule"></span>
+          <ul class="hero__specs t-data" id="hero-specs">
+            <li data-mobile-hide>Screen 30–100 ft</li>
+            <li>Players 3–20+</li>
+            <li data-mobile-hide>Tracking point-of-contact</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 · MARQUEE I -->
+    <div class="marquee marquee--smash" id="marquee-1" aria-hidden="true">
+      <div class="marquee__row" data-speed="60" data-dir="-1">
+        <div class="marquee__track"><span class="marquee__item">Everyone hits at once<i>✱</i></span></div>
+      </div>
+      <div class="marquee__row" data-speed="44" data-dir="1">
+        <div class="marquee__track"><span class="marquee__item">Point of contact<i>✱</i></span><span class="marquee__item">Multi-ball tracking<i>✱</i></span><span class="marquee__item">Patent pending<i>✱</i></span></div>
+      </div>
+    </div>
+
+    <!-- 03 · THE STATEMENT -->
+    <section class="section section--bone statement" id="statement" aria-labelledby="statement-h">
+      <div class="container">
+        <div class="grid">
+          <h2 class="statement__one t-huge" id="statement-h">
+            <span class="line"><span class="line__in">Year one,</span></span>
+            <span class="line"><span class="line__in">they line up.</span></span>
+            <span class="line"><span class="line__in">Year two,</span></span>
+            <span class="line"><span class="line__in">they stop coming.</span></span>
+          </h2>
+          <div class="statement__rule" id="statement-rule" aria-hidden="true"></div>
+          <p class="statement__two t-huge" id="statement-two">
+            <span class="line"><span class="line__in">Unless the</span></span>
+            <span class="line"><span class="line__in">attraction</span></span>
+            <span class="line"><span class="line__in">can change.</span></span>
+          </p>
+          <p class="statement__note t-body" id="statement-note">Entertainment concepts lose 30 to 50 percent of sales between year one and year two.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 · POINT OF CONTACT -->
+    <section class="contact band" id="contact" data-theme="dark" aria-labelledby="contact-h">
+      <div class="contact__stage" id="contact-stage" data-placeholder="true" data-asset="Impact sequence">
+        <canvas class="contact__canvas" id="contact-canvas" aria-hidden="true"></canvas>
+        <img class="contact__poster" id="contact-poster" src="/img/contact-first.webp" alt="" width="1920" height="1080" decoding="async" loading="lazy" aria-hidden="true">
+        <video class="contact__video" id="contact-video" muted playsinline loop preload="none" poster="/img/contact-first.webp" aria-hidden="true">
+          <source data-src="/video/contact.av1.mp4" type='video/mp4; codecs="av01.0.08M.08"'>
+          <source data-src="/video/contact.mp4" type="video/mp4">
+        </video>
+        <span class="dot contact__dot" id="contact-dot"></span>
+        <span class="contact__ring" id="contact-ring" aria-hidden="true"></span>
+      </div>
+
+      <div class="container contact__content">
+        <div class="grid contact__grid">
+          <div class="contact__left" id="contact-left">
+            <span class="t-index contact__index" aria-hidden="true">04</span>
+            <h2 class="t-huge contact__headline" id="contact-h">
+              <span class="line"><span class="line__in">We don't track</span></span>
+              <span class="line"><span class="line__in">the arc.</span></span>
+              <span class="line"><span class="line__in">We track</span></span>
+              <span class="line"><span class="line__in contact__turn">the impact.</span></span>
+            </h2>
+            <p class="t-lead contact__body">Every other system models where a ball would have gone. Ours knows exactly where it landed on the screen, to the pixel, for every ball in the air at once. That is why the screen can hit back.</p>
+            <a class="tlink contact__link" href="/technology">How it works</a>
+          </div>
+
+          <dl class="contact__readout t-data" id="contact-readout">
+            <div class="contact__row"><dt>Ball velocity</dt><dd id="ro-velocity" data-final="147 MPH">0 MPH</dd></div>
+            <div class="contact__row"><dt>Launch angle</dt><dd id="ro-angle" data-final="12.4°">0.0°</dd></div>
+            <div class="contact__row"><dt>Impact X</dt><dd id="ro-x" data-final="1010 PX">—</dd></div>
+            <div class="contact__row"><dt>Impact Y</dt><dd id="ro-y" data-final="590 PX">—</dd></div>
+            <div class="contact__row"><dt>Resolved</dt><dd id="ro-t" data-final="0.00 S">—</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="contact__progress" id="contact-progress" aria-hidden="true">
+        <span class="contact__progress-fill" id="contact-progress-fill"></span>
+        <span class="contact__frame" id="contact-frame">000</span>
+      </div>
+    </section>
+
+    <!-- 05 · FEATURES CAROUSEL -->
+    <section class="section section--bone features" id="features" aria-labelledby="features-h">
+      <div class="container">
+        <div class="grid">
+          <h2 class="t-huge features__headline" id="features-h" data-lines>
+            <span class="line"><span class="line__in">Six things a</span></span>
+            <span class="line"><span class="line__in">simulator cannot do.</span></span>
+          </h2>
+        </div>
+      </div>
+
+      <div class="fc" id="fc">
+        <div class="fc__viewport" id="fc-viewport">
+          <div class="fc__track" id="fc-track" tabindex="0" role="region" aria-label="Six things a simulator cannot do. Use arrow keys to browse." data-cursor="drag">
+            <article class="fcard">
+              <div class="media media--4x3 fcard__media" data-placeholder="true" data-asset="Carousel 1"><img src="/img/card-everyone.webp" alt="Four balls in flight toward one screen" width="1200" height="900" loading="lazy" decoding="async"></div>
+              <h3 class="fcard__title t-medium">Everyone hits at once</h3>
+              <p class="fcard__body t-small">Three to twenty bays firing into one screen, tracked simultaneously.</p>
+            </article>
+            <article class="fcard">
+              <div class="media media--4x3 fcard__media" data-placeholder="true" data-asset="Carousel 2"><img src="/img/card-hitsback.webp" alt="A target shattering at the point of contact" width="1200" height="900" loading="lazy" decoding="async"></div>
+              <h3 class="fcard__title t-medium">The screen hits back</h3>
+              <p class="fcard__body t-small">Point-of-contact detection means the ball strikes a target, not a calculation.</p>
+            </article>
+            <article class="fcard">
+              <div class="media media--4x3 fcard__media" data-placeholder="true" data-asset="Carousel 3"><img src="/img/card-arcade.webp" alt="An asteroid field on the screen" width="1200" height="900" loading="lazy" decoding="async"></div>
+              <h3 class="fcard__title t-medium">Licensed arcade games</h3>
+              <p class="fcard__body t-small">Atari's Asteroids today, with Taito's Space Invaders in development.</p>
+            </article>
+            <article class="fcard">
+              <div class="media media--4x3 fcard__media" data-placeholder="true" data-asset="Carousel 4"><img src="/img/card-modes.webp" alt="Shot data beside a target detonating" width="1200" height="900" loading="lazy" decoding="async"></div>
+              <h3 class="fcard__title t-medium">Golf mode and party mode</h3>
+              <p class="fcard__body t-small">Full shot and swing data for real golfers. Chaos for everyone else.</p>
+            </article>
+            <article class="fcard">
+              <div class="media media--4x3 fcard__media" data-placeholder="true" data-asset="Carousel 5"><img src="/img/card-room.webp" alt="A cinema-wide screen above rows of seats" width="1200" height="900" loading="lazy" decoding="async"></div>
+              <h3 class="fcard__title t-medium">The room changes</h3>
+              <p class="fcard__body t-small">Range by day, game night, watch party, kids' movie, private event.</p>
+            </article>
+            <article class="fcard">
+              <div class="media media--4x3 fcard__media" data-placeholder="true" data-asset="Carousel 6"><img src="/img/card-seasons.webp" alt="A grid of game tiles with new ones lit" width="1200" height="900" loading="lazy" decoding="async"></div>
+              <h3 class="fcard__title t-medium">New seasons, shipped over the air</h3>
+              <p class="fcard__body t-small">New games and seasonal themes reach venues already installed.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="fc__rail" aria-hidden="true"><span class="fc__rail-fill" id="fc-rail-fill"></span></div>
+          <div class="fc__controls">
+            <a class="btn btn--lg btn--outline" href="/technology">Learn more about our technology</a>
+            <div class="fc__arrows">
+              <button class="fc__arrow fc__arrow--prev" id="fc-prev" aria-label="Previous"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 2.5L5 8l5.5 5.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+              <button class="fc__arrow fc__arrow--next" id="fc-next" aria-label="Next"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 2.5L11 8l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 · THE TWO PRODUCTS -->
+    <section class="section section--black products" id="products" data-theme="dark" aria-labelledby="products-h">
+      <h2 class="sr-only" id="products-h">Two products</h2>
+      <div class="container">
+        <div class="pt__switch" id="pt-switch" role="tablist" aria-label="Product">
+          <span class="pt__thumb" id="pt-thumb" aria-hidden="true"></span>
+          <button class="pt__tab" role="tab" id="tab-sim" aria-selected="true" aria-controls="panel-sim" data-index="0">Multiplayer Simulator</button>
+          <button class="pt__tab" role="tab" id="tab-range" aria-selected="false" aria-controls="panel-range" data-index="1" tabindex="-1">Cinematic Indoor Range</button>
+          <span class="dot pt__dot" id="pt-dot"></span>
+        </div>
+
+        <div class="grid pt__panel">
+          <div class="pt__media media media--4x3" data-placeholder="true" data-asset="Product videos">
+            <video class="pt__video is-active" data-index="0" muted playsinline loop preload="none" poster="/img/product-sim-poster.webp" aria-hidden="true">
+              <source data-src="/video/product-sim.av1.mp4" type='video/mp4; codecs="av01.0.08M.08"'>
+              <source data-src="/video/product-sim.mp4" type="video/mp4">
+            </video>
+            <video class="pt__video" data-index="1" muted playsinline loop preload="none" poster="/img/product-range-poster.webp" aria-hidden="true">
+              <source data-src="/video/product-range.av1.mp4" type='video/mp4; codecs="av01.0.08M.08"'>
+              <source data-src="/video/product-range.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="pt__text">
+            <div class="pt__state is-active" id="panel-sim" role="tabpanel" aria-labelledby="tab-sim" data-index="0">
+              <h3 class="t-large pt__headline"><span class="line"><span class="line__in">The simulator,</span></span><span class="line"><span class="line__in">rebuilt for a group.</span></span></h3>
+              <p class="t-lead pt__body">Four players hitting the same screen at the same time, in the footprint a single-bay simulator already occupies.</p>
+              <dl class="pt__specs t-data">
+                <div class="pt__row"><dt>Footprint</dt><dd>500–600 SQ FT</dd></div>
+                <div class="pt__row"><dt>Ceiling</dt><dd>12 FT MINIMUM</dd></div>
+                <div class="pt__row"><dt>Players</dt><dd>3–4</dd></div>
+                <div class="pt__row"><dt>Screen</dt><dd>STANDARD BAY FORMAT</dd></div>
+              </dl>
+              <a class="tlink pt__link" href="/products/multiplayer-simulator">Explore this product</a>
+            </div>
+            <div class="pt__state" id="panel-range" role="tabpanel" aria-labelledby="tab-range" data-index="1" inert>
+              <h3 class="t-large pt__headline"><span class="line"><span class="line__in">A range, a theater</span></span><span class="line"><span class="line__in">and an arcade.</span></span></h3>
+              <p class="t-lead pt__body">Up to twenty-four players on a screen as wide as a hundred feet, with the house lights down.</p>
+              <dl class="pt__specs t-data">
+                <div class="pt__row"><dt>Footprint</dt><dd>4,000–10,000 SQ FT</dd></div>
+                <div class="pt__row"><dt>Ceiling</dt><dd>20–30 FT</dd></div>
+                <div class="pt__row"><dt>Players</dt><dd>8–24</dd></div>
+                <div class="pt__row"><dt>Screen</dt><dd>UP TO 100 FT WIDE</dd></div>
+              </dl>
+              <a class="tlink pt__link" href="/products/cinematic-indoor-range">Explore this product</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 · MARQUEE II -->
+    <div class="marquee marquee--bone" id="marquee-2" aria-hidden="true">
+      <div class="marquee__row" data-speed="52" data-dir="-1">
+        <div class="marquee__track"><span class="marquee__item">Hit don't sit<i>✱</i></span></div>
+      </div>
+    </div>
+
+    <!-- 08 · FOUNDER -->
+    <section class="section section--bone founder cv-auto" id="founder" aria-labelledby="founder-h">
+      <h2 class="sr-only" id="founder-h">From the founder</h2>
+      <div class="container">
+        <div class="grid">
+          <div class="founder__media" id="founder-media" data-placeholder="true" data-asset="Founder video" data-video-src="">
+            <div class="media media--16x9">
+              <img src="/img/founder-poster.webp" alt="" width="1600" height="900" loading="lazy" decoding="async">
+              <button class="founder__play" id="founder-play" aria-label="Play the founder video" disabled aria-disabled="true">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="currentColor"/></svg>
+              </button>
+            </div>
+            <p class="founder__note t-small">Video arriving from TJ</p>
+          </div>
+
+          <div class="founder__text">
+            <blockquote class="founder__quote t-large" id="founder-quote" data-split>
+              <p>“I watched concepts lose half their business in year two. So I built one that resets.”</p>
+            </blockquote>
+            <div class="founder__attr">
+              <p class="founder__name">TJ Schier</p>
+              <p class="founder__role t-small">Founder and CEO. Former COO, Big Shots Golf.</p>
+            </div>
+            <figure class="founder__thumb" data-placeholder="true" data-asset="Secondary clip">
+              <div class="media"><img src="/img/founder-thumb.webp" alt="" width="336" height="188" loading="lazy" decoding="async"></div>
+              <figcaption class="t-small">From the Wisconsin install</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- lightbox for the founder video -->
+    <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Founder video">
+      <button class="lightbox__close" id="lightbox-close" aria-label="Close"><span></span><span></span></button>
+      <div class="lightbox__frame"><video id="lightbox-video" playsinline preload="none"><track kind="captions" srclang="en" label="English" src="/captions/founder.vtt"></video></div>
+    </div>
+
+    <!-- 09 · COMING SOON -->
+    <section class="teaser band cv-auto" id="teaser" data-theme="dark" aria-labelledby="teaser-h">
+      <div class="teaser__bg" data-placeholder="true" data-asset="Coming soon still"><img id="teaser-still" src="/img/teaser-still.webp" alt="" width="1920" height="1080" loading="lazy" decoding="async"></div>
+      <div class="container teaser__content">
+        <h2 class="t-large teaser__headline" id="teaser-h" data-lines>
+          <span class="line"><span class="line__in">A virtual course</span></span>
+          <span class="line"><span class="line__in">where everyone plays</span></span>
+          <span class="line"><span class="line__in">at the same time.</span></span>
+        </h2>
+        <p class="t-body teaser__body">In development. First look coming soon.</p>
+        <form class="teaser__form" id="teaser-form" novalidate>
+          <div class="teaser__row" id="teaser-row">
+            <label class="sr-only" for="teaser-email">Email address</label>
+            <input class="teaser__input t-body" id="teaser-email" type="email" name="email" placeholder="Email address" autocomplete="email" inputmode="email" required>
+            <button class="teaser__submit" type="submit">Notify me</button>
+            <span class="teaser__underline" aria-hidden="true"></span>
+          </div>
+          <p class="teaser__error t-small" id="teaser-error" role="alert" hidden>Enter a valid email address.</p>
+          <p class="teaser__done t-medium" id="teaser-done" hidden>You're on the list.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- 10 · CASE STUDIES -->
+    <section class="section section--bone facilities cv-auto" id="facilities" aria-labelledby="facilities-h">
+      <div class="container">
+        <div class="grid facilities__head">
+          <h2 class="t-huge facilities__headline" id="facilities-h" data-lines>
+            <span class="line"><span class="line__in">Where it's</span></span>
+            <span class="line"><span class="line__in">playing.</span></span>
+          </h2>
+          <a class="tlink facilities__all" href="/case-studies">All facilities</a>
+        </div>
+
+        <div class="facilities__cards" id="facilities-cards">
+          <article class="fac" data-tone="lead">
+            <div class="media media--3x2 fac__media" data-placeholder="true" data-asset="Wisconsin footage">
+              <img src="/img/case-wisconsin.webp" alt="Four players on one screen at The River Club of Mequon" width="1500" height="1000" loading="lazy" decoding="async">
+              <span class="fac__chip">Live</span>
+            </div>
+            <p class="fac__loc t-small">Mequon, Wisconsin</p>
+            <h3 class="fac__name t-medium">The River Club of Mequon</h3>
+            <dl class="fac__stats">
+              <div><dt class="t-large">4</dt><dd class="t-small">Players</dd></div>
+              <div><dt class="t-large">400+</dt><dd class="t-small">Sq ft screen</dd></div>
+              <div><dt class="t-large">1</dt><dd class="t-small">Simulator replaced</dd></div>
+            </dl>
+            <a class="tlink" href="/case-studies/river-club-of-mequon">Read the study</a>
+          </article>
+
+          <article class="fac" data-tone="rough">
+            <div class="media media--3x2 fac__media" data-placeholder="true" data-asset="Texas footage">
+              <img src="/img/case-texas.webp" alt="Twelve players at once in the SmashSwing showroom" width="1500" height="1000" loading="lazy" decoding="async">
+              <span class="fac__chip">Live</span>
+            </div>
+            <p class="fac__loc t-small">Lewisville, Texas</p>
+            <h3 class="fac__name t-medium">SmashSwing Showroom</h3>
+            <dl class="fac__stats">
+              <div><dt class="t-large">5,500</dt><dd class="t-small">Balls tracked</dd></div>
+              <div><dt class="t-large">3</dt><dd class="t-small">Months</dd></div>
+              <div><dt class="t-large">12</dt><dd class="t-small">Players at once</dd></div>
+            </dl>
+            <a class="tlink" href="/case-studies/smashswing-showroom">Read the study</a>
+          </article>
+        </div>
+
+        <blockquote class="facilities__quote" id="facilities-quote" data-placeholder="true" data-asset="Testimonial (composite)">
+          <p class="t-large">“Members who never booked the simulator now book the room. The Tuesday problem stopped being a problem.”</p>
+          <footer class="t-small">General Manager, The River Club of Mequon</footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- 11 · CLOSE -->
+    <section class="close band cv-auto" id="close" data-theme="dark" aria-labelledby="close-h">
+      <div class="close__video" data-placeholder="true" data-asset="Close video (hero plate)" data-no-control>
+        <video muted playsinline loop preload="none" poster="/img/hero-poster.webp" aria-hidden="true">
+          <source data-src="/video/hero-placeholder.av1.mp4" type='video/mp4; codecs="av01.0.08M.08"'>
+          <source data-src="/video/hero-placeholder.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="container close__content">
+        <h2 class="t-mega close__headline" id="close-h" data-lines>
+          <span class="line"><span class="line__in">Hit.</span></span>
+          <span class="line"><span class="line__in">Don't sit.</span></span>
+        </h2>
+        <p class="t-lead close__body">See it in Lewisville, or we'll bring it to you.</p>
+        <a class="btn btn--xl btn--smash close__cta" href="/contact">Book a demo</a>
+        <p class="t-data close__address">550 W Round Grove Rd, Suite 500 · Lewisville, TX 75067</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 12 · FOOTER -->
+  <footer class="footer cv-auto" id="footer" data-theme="dark">
+    <div class="container">
+      <div class="grid footer__grid">
+        <p class="footer__line t-body">Patent-pending multi-player golf. Built in Texas.</p>
+        <div class="footer__col">
+          <h3 class="footer__head">Products</h3>
+          <ul><li><a href="/products/multiplayer-simulator">Multiplayer Simulator</a></li><li><a href="/products/cinematic-indoor-range">Cinematic Indoor Range</a></li></ul>
+        </div>
+        <div class="footer__col">
+          <h3 class="footer__head">Company</h3>
+          <ul><li><a href="/technology">Technology</a></li><li><a href="/case-studies">Case studies</a></li><li><a href="/contact">Contact</a></li></ul>
+        </div>
+        <div class="footer__col">
+          <h3 class="footer__head">Follow</h3>
+          <ul><li><a href="https://instagram.com" rel="noopener">Instagram</a></li><li><a href="https://facebook.com" rel="noopener">Facebook</a></li><li><a href="https://tiktok.com" rel="noopener">TikTok</a></li><li><a href="https://linkedin.com" rel="noopener">LinkedIn</a></li></ul>
+        </div>
+      </div>
+      <div class="footer__bar t-small">
+        <p>© 2026 SmashSwing Immersive</p>
+        <ul class="footer__legal"><li><a href="/privacy">Privacy</a></li><li><a href="/terms">Terms</a></li><li><a href="/accessibility">Accessibility</a></li></ul>
+      </div>
+    </div>
+    <div class="footer__mark" id="footer-mark" data-text="SmashSwing" aria-hidden="true"></div>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

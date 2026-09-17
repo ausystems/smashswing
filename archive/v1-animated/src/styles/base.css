@@ -1,0 +1,183 @@
+/* ------------------------------------------------------------------
+   Fonts — self-hosted, Latin subset, swap, metric-matched fallbacks
+   ------------------------------------------------------------------ */
+@font-face {
+  font-family: 'Archivo';
+  src: url('/fonts/archivo-latin.woff2') format('woff2-variations'), url('/fonts/archivo-latin.woff2') format('woff2');
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Martian Mono';
+  src: url('/fonts/martian-mono-latin.woff2') format('woff2-variations'), url('/fonts/martian-mono-latin.woff2') format('woff2');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* fallback metrics so the swap does not shift layout */
+@font-face {
+  font-family: 'Archivo Fallback';
+  src: local('Arial'), local('Helvetica Neue'), local('Helvetica');
+  size-adjust: 104%;
+  ascent-override: 88%;
+  descent-override: 21%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: 'Martian Mono Fallback';
+  src: local('Menlo'), local('Courier New');
+  size-adjust: 116.3%;
+  ascent-override: 92%;
+  descent-override: 24%;
+  line-gap-override: 0%;
+}
+
+/* ------------------------------------------------------------------
+   Base
+   ------------------------------------------------------------------ */
+html { background: var(--black); color-scheme: light; scroll-behavior: auto; }
+body {
+  font-family: var(--f-display);
+  font-stretch: var(--body-wdth);
+  font-weight: var(--body-wght);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--black);
+  background: var(--bone);
+  overflow-x: clip;
+}
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+main { position: relative; display: block; }
+
+/* ------------------------------------------------------------------
+   Type scale
+   ------------------------------------------------------------------ */
+.t-mega, .t-huge, .t-large, .t-index {
+  font-family: var(--f-display);
+  text-transform: uppercase;
+  font-kerning: normal;
+}
+.t-mega   { font-size: clamp(72px, 13.5vw, 232px); line-height: 0.82; letter-spacing: -0.035em; font-stretch: 62%; font-weight: 800; }
+.t-huge   { font-size: clamp(52px, 8vw, 148px);    line-height: 0.86; letter-spacing: -0.03em;  font-stretch: 66%; font-weight: 800; }
+.t-large  { font-size: clamp(34px, 4.2vw, 68px);   line-height: 0.94; letter-spacing: -0.02em;  font-stretch: 72%; font-weight: 700; }
+.t-medium { font-size: clamp(24px, 2.2vw, 34px);   line-height: 1.08; letter-spacing: -0.01em;  font-stretch: 80%; font-weight: 600; }
+.t-lead   { font-size: clamp(18px, 1.35vw, 22px);  line-height: 1.45; letter-spacing: -0.005em; font-stretch: 100%; font-weight: 400; }
+.t-body   { font-size: 16px; line-height: 1.6; letter-spacing: 0; font-stretch: 100%; font-weight: 400; }
+.t-small  { font-size: 14px; line-height: 1.5; letter-spacing: 0; font-stretch: 100%; font-weight: 400; }
+.t-data   { font-family: var(--f-mono); font-size: 12px; line-height: 1.4; letter-spacing: 0.02em; font-weight: 500; font-variant-numeric: tabular-nums; }
+.t-index  { font-size: clamp(48px, 6vw, 104px); line-height: 1; letter-spacing: -0.02em; font-stretch: 62%; font-weight: 800; }
+
+/* headline lines: each line is a mask, its inner span is what moves */
+.line { display: block; overflow: hidden; }
+.line > .line__in { display: block; will-change: transform; }
+.hl { display: block; }
+
+/* ------------------------------------------------------------------
+   Buttons — pills, no shadows, no arrows
+   ------------------------------------------------------------------ */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: 42px; padding: 0 24px;
+  border-radius: var(--r-pill);
+  border: 1px solid transparent;
+  font-family: var(--f-display); font-stretch: 100%; font-weight: 600; font-size: 14px; line-height: 1;
+  letter-spacing: 0; white-space: nowrap;
+  transition: background-color var(--t-fast) var(--ease), color var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease);
+}
+.btn--lg { height: 52px; padding: 0 30px; }
+.btn--xl { height: 60px; padding: 0 36px; font-size: 15px; }
+.btn--primary { background: var(--white); color: var(--black); border-color: var(--white); }
+.btn--primary:hover { background: var(--smash); color: var(--white); border-color: var(--smash); }
+.btn--ghost { background: transparent; color: var(--white); border-color: var(--white-45); }
+.btn--ghost:hover { border-color: var(--white); background: var(--white-10); }
+.btn--outline { background: transparent; color: var(--black); border-color: var(--black); }
+.btn--outline:hover { background: var(--black); color: var(--bone); }
+.btn--smash { background: var(--smash); color: var(--white); border-color: var(--smash); }
+.btn--smash:hover { background: var(--white); color: var(--black); border-color: var(--white); }
+
+/* text links — 1px underline that extends on hover */
+.tlink {
+  position: relative; display: inline-block;
+  font-family: var(--f-display); font-stretch: 100%; font-weight: 600; font-size: 14px; line-height: 1.2;
+  padding-bottom: 4px;
+}
+.tlink::after {
+  content: ''; position: absolute; left: 0; bottom: 0; height: 1px; width: 100%;
+  background: currentColor; transition: width var(--t-fast) var(--ease);
+}
+.tlink:hover::after { width: calc(100% + 10px); }
+
+/* circular icon buttons */
+.cbtn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 56px; height: 56px; border-radius: 50%;
+  border: 1px solid var(--white-45); color: var(--white);
+  transition: border-color var(--t-fast) var(--ease), background-color var(--t-fast) var(--ease), color var(--t-fast) var(--ease), opacity var(--t-fast) var(--ease);
+}
+.cbtn svg { width: 16px; height: 16px; display: block; }
+.cbtn:hover { border-color: var(--white); }
+
+/* ------------------------------------------------------------------
+   The impact dot. One object. Never labelled.
+   ------------------------------------------------------------------ */
+.dot {
+  position: absolute; width: 10px; height: 10px; margin: -5px 0 0 -5px;
+  border-radius: 50%; background: var(--smash); pointer-events: none;
+  transform: scale(0); will-change: transform;
+}
+.dot::after {
+  content: ''; position: absolute; inset: 0; border-radius: 50%;
+  background: var(--smash); opacity: 0; transform: scale(1);
+}
+.dot.is-live::after { animation: dot-ring 2.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite; }
+@keyframes dot-ring {
+  0%   { transform: scale(1);   opacity: 0.55; }
+  100% { transform: scale(3.4); opacity: 0; }
+}
+
+/* ------------------------------------------------------------------
+   Grid overlay — visible, 12 columns, under content, above backgrounds
+   ------------------------------------------------------------------ */
+.grid-lines {
+  position: fixed; inset: 0; z-index: 1; pointer-events: none;
+  --gl: var(--black-08);
+}
+.grid-lines[data-theme="dark"] { --gl: var(--white-10); }
+.grid-lines__inner {
+  width: var(--content); height: 100%; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr)); column-gap: var(--gutter);
+  border-right: 1px solid var(--gl);
+  transition: border-color var(--t-base) var(--ease);
+}
+.grid-lines__inner i { display: block; border-left: 1px solid var(--gl); transition: border-color var(--t-base) var(--ease); }
+@media (max-width: 1023.98px) { .grid-lines__inner i:nth-child(n + 9) { display: none; } }
+@media (max-width: 767.98px)  { .grid-lines__inner i:nth-child(n + 5) { display: none; } }
+/* design review: press G */
+.grid-lines.is-hi { --gl: var(--black-45); }
+.grid-lines.is-hi[data-theme="dark"] { --gl: var(--white-45); }
+.grid-lines.is-hi .grid-lines__inner i { background: linear-gradient(90deg, transparent calc(100% - 1px), var(--gl) calc(100% - 1px)); }
+
+/* ------------------------------------------------------------------
+   Placeholder audit — ?debug=assets
+   ------------------------------------------------------------------ */
+html.debug-assets [data-placeholder="true"] { outline: 2px dashed var(--smash); outline-offset: -2px; position: relative; }
+html.debug-assets [data-placeholder="true"]::before {
+  content: attr(data-asset); position: absolute; top: 0; left: 0; z-index: 50;
+  font: 500 10px/1 var(--f-mono); letter-spacing: 0.04em; text-transform: uppercase;
+  padding: 6px 8px; background: var(--smash); color: var(--white); pointer-events: none;
+}
+
+/* ------------------------------------------------------------------
+   Reduced motion — opacity only, 200ms
+   ------------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.2s !important; scroll-behavior: auto !important; }
+  .dot { transform: none; }
+}

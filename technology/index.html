@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Technology — SmashSwing Immersive</title>
+  <meta name="description" content="Point-of-contact tracking: the ball strikes the screen, and the game reacts at that pixel.">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="/brand/logomark-color.svg" type="image/svg+xml">
+  <link rel="preload" href="/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/src/styles/reset.css">
+  <link rel="stylesheet" href="/src/styles/tokens.css">
+  <link rel="stylesheet" href="/src/styles/base.css">
+  <link rel="stylesheet" href="/src/styles/pages.css">
+</head>
+<body data-page="technology">
+<header class="nav">
+  <div class="wrap nav__in">
+    <a class="nav__brand" href="/" aria-label="SmashSwing home">
+      <img src="/brand/logomark-black.svg" alt="" width="30" height="30">
+      <img src="/brand/wordmark-black.svg" alt="SmashSwing" width="110" height="32">
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="/products/">Products</a>
+      <a href="/technology/" aria-current="page">Technology</a>
+      <a href="/case-studies/">Case studies</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+    <div class="nav__right">
+      <a class="btn btn--solid" href="/contact/">Book a demo</a>
+      <button class="nav__burger" id="nav-burger" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="nav__menu" id="nav-menu">
+    <a href="/products/">Products</a>
+    <a href="/technology/">Technology</a>
+    <a href="/case-studies/">Case studies</a>
+    <a href="/contact/">Contact</a>
+    <a class="btn btn--solid btn--lg btn--full" href="/contact/">Book a demo</a>
+  </div>
+</header>
+
+<main id="main">
+<section class="section dark tech-hero section--flush-b" aria-labelledby="th">
+  <div class="wrap tech-hero__in">
+    <div class="tech-hero__grid">
+      <p class="tech-hero__label mono"><span>Technology · Patent pending</span><span>Point-of-contact tracking</span></p>
+      <h1 class="d1 tech-hero__title reg" id="th">We don't track <br>the arc. <br>We track <br>the impact.</h1>
+      <div class="tech-hero__aside">
+        <p class="lead">Every other system models where a ball would have gone. Ours knows exactly where it landed on the screen, to the pixel, for every ball in the air at once. That is why the screen can hit back.</p>
+        <dl class="spec mono-lg">
+          <div class="spec__row"><dt>Ball velocity</dt><dd>147 mph</dd></div>
+          <div class="spec__row"><dt>Launch angle</dt><dd>12.4°</dd></div>
+          <div class="spec__row"><dt>Impact X</dt><dd>1010 px</dd></div>
+          <div class="spec__row"><dt>Impact Y</dt><dd>590 px</dd></div>
+          <div class="spec__row"><dt>Resolved</dt><dd>0.00 s</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+  <div class="wrap impact">
+    <div class="media media--bw" data-placeholder="true" data-asset="Impact frame"><img src="/img/contact-poster.webp" alt="A target shattering at the exact point a ball struck the screen" width="1920" height="1080" decoding="async"></div>
+    <span class="dot impact__dot" aria-hidden="true"></span>
+    <p class="impact__cap mono"><span>Frame 056 / 120</span><span>Strike resolved at 1010 × 590</span></p>
+  </div>
+  <div style="height: clamp(56px, 7vw, 112px)"></div>
+</section>
+
+<section class="section steps" aria-labelledby="how-h">
+  <div class="wrap">
+    <div class="head">
+      <p class="head__label mono"><span>01</span><span>How it works</span></p>
+      <h2 class="d2 head__title" id="how-h">Four things happen in the same second.</h2>
+      <div class="head__aside"><p class="lead">Launch data for the golfers. Point of contact for the game. One screen, every ball.</p></div>
+    </div>
+    <div class="cells cells--4">
+      <div class="cell"><div class="cell__body"><p class="cell__idx">01</p><h3 class="cell__title h4">Every bay fires at one screen</h3><p class="cell__copy small">Three to twenty-four hitting stations face a single projection surface, 30 to 100 feet wide.</p></div></div>
+      <div class="cell"><div class="cell__body"><p class="cell__idx">02</p><h3 class="cell__title h4">The strike is read, not predicted</h3><p class="cell__copy small">Sensors resolve where each ball meets the screen, to the pixel, the instant it lands.</p></div></div>
+      <div class="cell"><div class="cell__body"><p class="cell__idx">03</p><h3 class="cell__title h4">The game reacts at that pixel</h3><p class="cell__copy small">Asteroids shatter, bricks break, targets explode exactly where the ball hit.</p></div></div>
+      <div class="cell"><div class="cell__body"><p class="cell__idx">04</p><h3 class="cell__title h4">Every ball, at once</h3><p class="cell__copy small">Dozens of balls in the air are tracked simultaneously. Nobody waits for a turn.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--line compare" aria-labelledby="cmp-h">
+  <div class="wrap">
+    <div class="head">
+      <p class="head__label mono"><span>02</span><span>Same category. Different experience.</span></p>
+      <h2 class="d2 head__title" id="cmp-h">A simulator estimates. We resolve.</h2>
+      <div class="head__aside"><p class="lead">The launch monitors the industry runs on are excellent at one thing: modelling a single ball's flight. That is not what a room full of people needs.</p></div>
+    </div>
+    <table class="table body">
+      <thead><tr><th class="mono" scope="col">Question</th><th class="h4" scope="col">A conventional simulator</th><th class="h4" scope="col">SmashSwing</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">What is measured</td><td>Where a ball would have gone</td><td><strong>Where the ball actually hit the screen</strong></td></tr>
+        <tr><td class="mono">Players per screen</td><td>One at a time</td><td><strong>3 to 24 at once</strong></td></tr>
+        <tr><td class="mono">Balls in flight</td><td>One</td><td><strong>Dozens</strong></td></tr>
+        <tr><td class="mono">What the screen does</td><td>Plays back a simulation</td><td><strong>Reacts at the point of contact</strong></td></tr>
+        <tr><td class="mono">Session shape</td><td>A queue</td><td><strong>Everyone swings together</strong></td></tr>
+        <tr><td class="mono">The room</td><td>A bay</td><td><strong>A bay, a range, a theater or an arcade</strong></td></tr>
+        <tr><td class="mono">Year two</td><td>The novelty wears off</td><td><strong>New games and seasons ship over the air</strong></td></tr>
+      </tbody>
+    </table>
+    <p class="compare__note small">Golf mode still gives real golfers full shot and swing data. Point-of-contact tracking sits alongside it, not instead of it.</p>
+  </div>
+</section>
+
+<section class="section game games" aria-labelledby="g-h">
+  <div class="wrap">
+    <div class="head">
+      <p class="head__label mono"><span>03</span><span>Licensed games</span></p>
+      <h2 class="d2 head__title" id="g-h">Real licences.<br>Real balls.</h2>
+      <div class="head__aside"><img class="games__mark" src="/brand/logomark-color.svg" alt="" width="120" height="120"></div>
+    </div>
+    <div class="games__grid">
+      <div class="games__media media media--16x10" data-placeholder="true" data-asset="Game capture · scoring zones"><img src="/img/still-zones.webp" alt="Scoring zones on the range, lit where balls land" width="1600" height="900" loading="lazy" decoding="async"></div>
+      <div class="games__list cells">
+        <div class="cell"><div class="cell__body"><div class="cell__row"><h3 class="h4">Asteroids</h3><span class="chip chip--live">Live</span></div><p class="cell__copy small">Licensed from Atari. The original, played with a seven iron.</p></div></div>
+        <div class="cell"><div class="cell__body"><div class="cell__row"><h3 class="h4">Space Invaders</h3><span class="chip chip--soon">In development</span></div><p class="cell__copy small">Licensed from Taito. Waves advance until the room clears them.</p></div></div>
+        <div class="cell"><div class="cell__body"><div class="cell__row"><h3 class="h4">Virtual multiplayer course</h3><span class="chip chip--soon">In development</span></div><p class="cell__copy small">A course everyone plays at the same time. First look coming soon.</p></div></div>
+        <div class="cell"><div class="cell__body"><div class="cell__row"><h3 class="h4">Seasons</h3><span class="mono games__tag">Over the air</span></div><p class="cell__copy small">New games and themes reach every installed venue without a truck roll.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark data" aria-labelledby="d-h">
+  <div class="wrap">
+    <div class="head head--tight">
+      <p class="head__label mono"><span>04</span><span>By the numbers</span></p>
+      <h2 class="sr-only" id="d-h">By the numbers</h2>
+    </div>
+    <div class="cells cells--6">
+      <div class="cell cell--stat"><div class="cell__body"><p class="stat">30–100</p><p class="stat-l mono">Ft screen width</p></div></div>
+      <div class="cell cell--stat"><div class="cell__body"><p class="stat">3–24</p><p class="stat-l mono">Players at once</p></div></div>
+      <div class="cell cell--stat"><div class="cell__body"><p class="stat">All</p><p class="stat-l mono">Balls in flight tracked</p></div></div>
+      <div class="cell cell--stat"><div class="cell__body"><p class="stat">1 px</p><p class="stat-l mono">Strike resolution</p></div></div>
+      <div class="cell cell--stat"><div class="cell__body"><p class="stat">2</p><p class="stat-l mono">Licensed titles</p></div></div>
+      <div class="cell cell--stat"><div class="cell__body"><p class="stat">OTA</p><p class="stat-l mono">Games and seasons</p></div></div>
+    </div>
+  </div>
+</section>
+
+</main>
+<section class="section dark cta" aria-labelledby="cta-h">
+  <div class="wrap cta__in">
+    <h2 class="d1 cta__title" id="cta-h">Hit.<br>Don't sit.</h2>
+    <p class="lead muted" style="max-width:34ch">See it in Lewisville, or we'll bring it to you.</p>
+    <a class="btn btn--solid btn--lg" href="/contact/">Book a demo</a>
+    <p class="mono cta__addr">550 W Round Grove Rd, Suite 500 · Lewisville, TX 75067</p>
+  </div>
+</section>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__line body">
+        <img src="/brand/logomark-white.svg" alt="" width="14" height="14">
+        <p>Patent-pending multi-player, multi-ball golf. Built in Lewisville, Texas.</p>
+      </div>
+      <div class="footer__col">
+        <h3 class="footer__head">Products</h3>
+        <ul><li><a href="/products/#simulator">Multiplayer Simulator</a></li><li><a href="/products/#range">Cinematic Indoor Range</a></li></ul>
+      </div>
+      <div class="footer__col">
+        <h3 class="footer__head">Company</h3>
+        <ul><li><a href="/technology/">Technology</a></li><li><a href="/case-studies/">Case studies</a></li><li><a href="/contact/">Contact</a></li></ul>
+      </div>
+      <div class="footer__col">
+        <h3 class="footer__head">Follow</h3>
+        <ul><li><a href="https://instagram.com" rel="noopener">Instagram</a></li><li><a href="https://facebook.com" rel="noopener">Facebook</a></li><li><a href="https://tiktok.com" rel="noopener">TikTok</a></li><li><a href="https://linkedin.com" rel="noopener">LinkedIn</a></li></ul>
+      </div>
+    </div>
+    <div class="footer__bar small">
+      <p>© 2026 SmashSwing Immersive. Patent pending.</p>
+      <ul class="footer__legal"><li><a href="/privacy/">Privacy</a></li><li><a href="/terms/">Terms</a></li><li><a href="/accessibility/">Accessibility</a></li></ul>
+    </div>
+  </div>
+  <div class="footer__mark" aria-hidden="true"><img src="/brand/wordmark-white.svg" alt="" width="476" height="138"></div>
+</footer>
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
