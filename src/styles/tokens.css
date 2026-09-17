@@ -30,8 +30,11 @@
   --bg: var(--white);
   --fg: var(--black);
   --fg-2: var(--ink-55);
-  --line: var(--ink-12);
+  --line: rgba(59, 2, 89, 0.16);      /* purple-tinted hairline on white */
   --line-strong: var(--black);
+  --label: var(--purple);              /* mono labels on white */
+  --index: var(--magenta);             /* index numerals everywhere */
+  --tint: rgba(59, 2, 89, 0.06);
 
   /* type */
   --f-sans: 'Archivo', 'Archivo Fallback', system-ui, sans-serif;
@@ -56,10 +59,11 @@
 /* dark contexts flip the contextual tokens */
 .dark, [data-theme="dark"] {
   --bg: var(--black); --fg: var(--white); --fg-2: var(--paper-55);
-  --line: var(--paper-16); --line-strong: var(--white);
+  --line: rgba(15, 255, 255, 0.18); --line-strong: var(--white);
+  --label: rgba(15, 255, 255, 0.82); --tint: rgba(15, 255, 255, 0.05);
 }
 /* the games context: purple ground, aqua lines, magenta marks */
 .game {
   --bg: var(--purple); --fg: var(--white); --fg-2: rgba(255, 255, 255, 0.62);
-  --line: rgba(15, 255, 255, 0.28); --line-strong: var(--aqua);
+  --line: rgba(15, 255, 255, 0.28); --line-strong: var(--aqua); --label: var(--aqua);
 }
