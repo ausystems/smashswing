@@ -67,3 +67,8 @@ To re-cut clips after changing times or crops: `./tools/encode-footage.sh` (need
 ## Checks
 
 `npm run qa` captures every page at 1440 and 390, walks each page so lazy images load, and reports horizontal overflow and console errors. Both are clean at the time of writing.
+
+
+## Deploy
+
+`./tools/deploy-pages.sh` builds with `SITE_BASE=/smashswing/` and force-pushes `/dist` to the `gh-pages` branch, which GitHub Pages serves at https://ausystems.github.io/smashswing/. `tools/pages-workflow.yml` is an equivalent Actions workflow for when a token with the `workflow` scope is available.
