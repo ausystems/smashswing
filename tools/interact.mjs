@@ -21,8 +21,9 @@ report.tabsKey = await page.evaluate(() => ({ simSel: document.getElementById('t
 await page.goto('http://localhost:5173/products/#range', { waitUntil: 'networkidle0' });
 report.deepLink = await page.evaluate(() => ({ rangeSel: document.getElementById('tab-range').getAttribute('aria-selected'), rangeHidden: document.getElementById('panel-range').hidden }));
 
-// teaser
+// teaser (only on pages that still carry the email capture)
 await page.goto('http://localhost:5173/', { waitUntil: 'networkidle0' });
+if (await page.$('#teaser-email')) {
 await page.type('#teaser-email', 'nope');
 await page.keyboard.press('Enter');
 const t1 = await page.evaluate(() => document.getElementById('teaser-form').className);
@@ -31,6 +32,7 @@ await page.type('#teaser-email', 'gm@club.com');
 await page.keyboard.press('Enter');
 const t2 = await page.evaluate(() => document.getElementById('teaser-form').className);
 report.teaser = { invalid: t1, valid: t2 };
+} else { report.teaser = 'no email capture on this homepage'; }
 
 // contact form
 await page.goto('http://localhost:5173/contact/', { waitUntil: 'networkidle0' });

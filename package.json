@@ -9,7 +9,8 @@
     "build": "npm run pages && vite build",
     "preview": "vite preview",
     "assets": "python3 tools/gen-assets.py",
-    "qa": "node tools/shoot.mjs qa"
+    "qa": "node tools/shoot.mjs qa",
+    "verify": "node tools/verify-home.mjs"
   },
   "dependencies": {
     "gsap": "^3.12.5",

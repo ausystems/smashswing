@@ -15,6 +15,7 @@ export default defineConfig({
         technology: resolve(__dirname, 'technology/index.html'),
         cases: resolve(__dirname, 'case-studies/index.html'),
         contact: resolve(__dirname, 'contact/index.html'),
+        consultation: resolve(__dirname, 'consultation/index.html'),
       },
     },
   },

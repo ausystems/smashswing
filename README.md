@@ -58,15 +58,20 @@ To re-cut clips after changing times or crops: `./tools/encode-footage.sh` (need
 
 ## Pages
 
-- **Home.** Full-width monochrome video hero with the differentiator headline; static type band; four hairline cells on why it is different; the founder video, full width; the in-place product toggle (tabs, no animation); the purple games band; the coming-soon teaser with email capture; two facility cards; the closing CTA.
-- **Products.** Page head; the same toggle with a seven-row spec list; a side-by-side comparison table; two video proof tiles with native controls; four venue cells.
-- **Technology.** Blueprint hero with the readout and the impact frame; four numbered steps; the "conventional simulator vs SmashSwing" contrast table (no competitor named); games band; six data cells.
-- **Case studies.** Alternating facility profiles with sticky media, stats, spec rows and a link; a flagged composite testimonial. Add a facility by copying one `article.facility`.
-- **Contact.** Details and next steps on the left, the form on the right; client-side validation and a success state only.
+- **Home.** Follows the approved Hostinger layout section for section: video hero, why it's different with four cards, the founder, the two-format toggle, ways to play, virtual golf courses (coming in 2027), where it's playing, the River Club photo gallery, and the closing band. Copy follows the October 2026 homepage brief. The gallery steps instantly with arrows, dots and arrow keys. Nothing animates.
+- **Products.** Page head, the format toggle with spec lists, a comparison table, two video proof tiles and four venue cells.
+- **Technology.** Blueprint hero with the readout and impact frame, four steps, the conventional-simulator contrast table, the games band and six data cells.
+- **Case studies.** Alternating facility profiles with stats and a flagged composite testimonial. Add a facility by copying one `article.facility`.
+- **Consultation.** Mirrors the approved Consultation page: banner, TJ's consulting offer with stats and the help list, the FSR Magazine article, and the SmashSwing overview PDF (`public/docs/smashswing-overview.pdf`).
+- **Contact.** Details and next steps beside the form, with client-side validation and a success state.
+
+The header, closing band and footer are shared partials in `src/partials/`. The closing band line is set per page in `tools/build-pages.py` (`CTA_LEAD`). The Contact and Consultation pages omit it, as in the approved layout.
 
 ## Checks
 
-`npm run qa` captures every page at 1440 and 390, walks each page so lazy images load, and reports horizontal overflow and console errors. Both are clean at the time of writing.
+- `npm run verify` checks every homepage string from the copy brief, confirms the old copy is gone, scans for em dashes, and exercises the tabs, gallery, mobile menu and internal links.
+- `npm run qa` captures every page at 1440 and 390 and reports horizontal overflow and console errors.
+- `node tools/home-shot.mjs <outdir> <path> <widths>` captures one page at any set of widths.
 
 
 ## Deploy

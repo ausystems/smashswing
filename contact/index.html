@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Book a demo — SmashSwing Immersive</title>
+  <title>Book a demo | SmashSwing Immersive</title>
   <meta name="description" content="See SmashSwing in Lewisville, Texas, or have it brought to you.">
   <meta name="theme-color" content="#000000">
   <link rel="icon" href="/brand/logomark-color.svg" type="image/svg+xml">
@@ -12,31 +12,34 @@
   <link rel="stylesheet" href="/src/styles/tokens.css">
   <link rel="stylesheet" href="/src/styles/base.css">
   <link rel="stylesheet" href="/src/styles/pages.css">
+  <link rel="stylesheet" href="/src/styles/home.css">
+  <link rel="stylesheet" href="/src/styles/consult.css">
 </head>
 <body data-page="contact">
 <header class="nav">
-  <div class="wrap nav__in">
-    <a class="nav__brand" href="/smashswing/" aria-label="SmashSwing home">
-      <img src="/brand/logomark-black.svg" alt="" width="30" height="30">
-      <img src="/brand/wordmark-black.svg" alt="SmashSwing" width="110" height="32">
-    </a>
+  <div class="nav__in">
+    <a class="nav__brand" href="/" aria-label="SmashSwing home"><img src="/brand/logomark-color.svg" alt="" width="76" height="76"></a>
     <nav class="nav__links" aria-label="Primary">
-      <a href="/smashswing/products/">Products</a>
-      <a href="/smashswing/technology/">Technology</a>
-      <a href="/smashswing/case-studies/">Case studies</a>
-      <a href="/smashswing/contact/" aria-current="page">Contact</a>
+      <a href="/">Home</a>
+      <a href="/products/">Products</a>
+      <a href="/technology/">Technology</a>
+      <a href="/case-studies/">Case studies</a>
+      <a href="/consultation/">Consultation</a>
+      <a href="/contact/" aria-current="page">Contact</a>
     </nav>
     <div class="nav__right">
-      <a class="btn btn--solid" href="/smashswing/contact/">Book a demo</a>
-      <button class="nav__burger" id="nav-burger" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span></button>
+      <a class="nav__cta" href="/contact/">Book a demo</a>
+      <button class="nav__burger" id="nav-burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span></button>
     </div>
   </div>
   <div class="nav__menu" id="nav-menu">
-    <a href="/smashswing/products/">Products</a>
-    <a href="/smashswing/technology/">Technology</a>
-    <a href="/smashswing/case-studies/">Case studies</a>
-    <a href="/smashswing/contact/">Contact</a>
-    <a class="btn btn--solid btn--lg btn--full" href="/smashswing/contact/">Book a demo</a>
+    <a href="/">Home</a>
+    <a href="/products/">Products</a>
+    <a href="/technology/">Technology</a>
+    <a href="/case-studies/">Case studies</a>
+    <a href="/consultation/">Consultation</a>
+    <a href="/contact/" aria-current="page">Contact</a>
+    <a class="nav__cta" href="/contact/">Book a demo</a>
   </div>
 </header>
 
@@ -95,7 +98,7 @@
       <div class="form__done" id="contact-done" hidden>
         <p class="h4">Thanks. We'll be in touch within one business day.</p>
         <p class="small muted" style="margin-top:12px">In the meantime, the Technology page explains what makes the screen hit back.</p>
-        <p style="margin-top:24px"><a class="link" href="/smashswing/technology/">See the technology</a></p>
+        <p style="margin-top:24px"><a class="link" href="/technology/">See the technology</a></p>
       </div>
     </div>
   </div>
@@ -103,28 +106,41 @@
 
 </main>
 <footer class="footer">
+  <div class="footer__rule" aria-hidden="true"></div>
   <div class="wrap">
+    <div class="footer__cta">
+      <div>
+        <h2 class="footer__title">Put every ball<br>on the screen.</h2>
+        <p class="footer__sub">Patent-pending multi-player, multi-ball golf. See it in your venue.</p>
+      </div>
+      <a class="footer__btn" href="/contact/">Book a demo</a>
+    </div>
     <div class="footer__grid">
-      <div class="footer__line body">
-        <img src="/brand/logomark-white.svg" alt="" width="14" height="14">
+      <div class="footer__brand">
+        <img src="/brand/logomark-white.svg" alt="SmashSwing" width="88" height="88">
         <p>Patent-pending multi-player, multi-ball golf. Built in Lewisville, Texas.</p>
       </div>
       <div class="footer__col">
-        <h3 class="footer__head">Products</h3>
-        <ul><li><a href="/smashswing/products/#simulator">Multiplayer Simulator</a></li><li><a href="/smashswing/products/#range">Cinematic Indoor Range</a></li></ul>
+        <h3>Products</h3>
+        <ul><li><a href="/products/#simulator">Multiplayer Simulator</a></li><li><a href="/products/#range">Cinematic Indoor Range</a></li></ul>
       </div>
       <div class="footer__col">
-        <h3 class="footer__head">Company</h3>
-        <ul><li><a href="/smashswing/technology/">Technology</a></li><li><a href="/smashswing/case-studies/">Case studies</a></li><li><a href="/smashswing/contact/">Contact</a></li></ul>
+        <h3>Company</h3>
+        <ul><li><a href="/technology/">Technology</a></li><li><a href="/case-studies/">Case studies</a></li><li><a href="/contact/">Contact</a></li></ul>
       </div>
       <div class="footer__col">
-        <h3 class="footer__head">Follow</h3>
-        <ul><li><a href="https://instagram.com" rel="noopener">Instagram</a></li><li><a href="https://facebook.com" rel="noopener">Facebook</a></li><li><a href="https://tiktok.com" rel="noopener">TikTok</a></li><li><a href="https://linkedin.com" rel="noopener">LinkedIn</a></li></ul>
+        <h3>Follow</h3>
+        <ul>
+          <li><a href="https://instagram.com/" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.3" fill="currentColor"/></svg>Instagram</a></li>
+          <li><a href="https://facebook.com/" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 22v-8.2h2.8l.4-3.3h-3.2V8.4c0-.9.3-1.6 1.6-1.6H17V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.4H7.5v3.3h2.8V22h3.3z" fill="currentColor"/></svg>Facebook</a></li>
+          <li><a href="https://tiktok.com/" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 2.5c.4 2.3 1.9 3.8 4.2 4v3.3c-1.6.1-3-.4-4.2-1.3v6.4a6.2 6.2 0 1 1-6.2-6.2c.3 0 .7 0 1 .1v3.4a2.9 2.9 0 1 0 2 2.7V2.5h3.2z" fill="currentColor"/></svg>TikTok</a></li>
+          <li><a href="https://linkedin.com/" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="9" width="4" height="12" fill="currentColor"/><circle cx="5" cy="4.8" r="2.3" fill="currentColor"/><path d="M10 9h3.8v1.7c.6-1.1 2-2 3.9-2 3.4 0 4.3 2.1 4.3 5.2V21h-4v-6.2c0-1.5-.4-2.6-1.9-2.6-1.6 0-2.1 1.1-2.1 2.6V21H10V9z" fill="currentColor"/></svg>LinkedIn</a></li>
+        </ul>
       </div>
     </div>
-    <div class="footer__bar small">
-      <p>© 2026 SmashSwing Immersive. Patent pending.</p>
-      <ul class="footer__legal"><li><a href="/smashswing/privacy/">Privacy</a></li><li><a href="/smashswing/terms/">Terms</a></li><li><a href="/smashswing/accessibility/">Accessibility</a></li></ul>
+    <div class="footer__bar">
+      <p>© 2026 SmashSwing Immersive. All Rights Reserved.</p>
+      <ul class="footer__legal"><li><a href="/privacy/">Privacy</a></li><li><a href="/terms/">Terms</a></li><li><a href="/accessibility/">Accessibility</a></li></ul>
     </div>
   </div>
   <div class="footer__mark" aria-hidden="true"><img src="/brand/wordmark-purple.svg" alt="" width="476" height="138"></div>

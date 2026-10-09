@@ -95,11 +95,6 @@
 .fac__stats .stat { font-size: clamp(26px, 2.2vw, 36px); }
 
 
-.cta { text-align: center; }
-.cta__in { display: grid; justify-items: center; gap: 32px; max-width: 900px; margin: 0 auto; }
-.cta__title { font-size: clamp(64px, 10vw, 176px); }
-.cta__addr { color: var(--label); }
-.cta__in::before { content: ''; width: 12px; height: 12px; border-radius: 50%; background: var(--magenta); box-shadow: 0 0 0 10px rgba(255,0,110,0.18); margin-bottom: 8px; }
 
 /* ==================================================================
    Inner pages — page head
@@ -157,7 +152,7 @@
    ================================================================== */
 .facility { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap); row-gap: 40px; padding: clamp(48px, 6vw, 88px) 0; border-top: 1px solid var(--line); align-items: start; }
 .facility:last-of-type { border-bottom: 1px solid var(--line); }
-.facility__media { grid-column: 1 / span 7; position: sticky; top: calc(var(--nav-h) + 24px); }
+.facility__media { grid-column: 1 / span 7; position: sticky; top: 24px; }
 .facility__text { grid-column: 8 / span 5; display: grid; gap: 28px; }
 .facility__meta { display: flex; flex-wrap: wrap; gap: 8px 24px; color: var(--label); }
 .facility__quote { border-left: 1px solid var(--line-strong); padding-left: 20px; display: grid; gap: 10px; }

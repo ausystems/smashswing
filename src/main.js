@@ -1,5 +1,5 @@
-/* SmashSwing v2 — the only script on the site. No animation, no scroll effects.
-   Tabs (the product toggle), the mobile menu, two forms, and the asset audit flag. */
+/* SmashSwing — the only script on the site. No animation, no scroll effects.
+   Tabs (the product toggle), the mobile menu, the photo gallery, the forms, and the asset audit flag. */
 
 const q = (s, r = document) => r.querySelector(s);
 const qa = (s, r = document) => Array.from(r.querySelectorAll(s));
@@ -16,7 +16,7 @@ qa('[role="tablist"]').forEach((list) => {
       t.tabIndex = on ? 0 : -1;
       if (panels[k]) {
         panels[k].hidden = !on;
-        qa('video[autoplay]', panels[k]).forEach((v) => { if (on) v.play().catch(() => {}); else v.pause(); });
+        qa('video[autoplay], video[data-autoplay]', panels[k]).forEach((v) => { if (on) v.play().catch(() => {}); else v.pause(); });
       }
     });
     if (focus) tabs[i].focus();
@@ -34,18 +34,64 @@ qa('[role="tablist"]').forEach((list) => {
   if (hash && idx >= 0) select(idx);
 });
 
+// ---- clips that should play on sight: start when visible, pause when not (keeps page load light)
+const lazyClips = qa('video[data-autoplay]');
+if (lazyClips.length && 'IntersectionObserver' in window) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((en) => {
+      const v = en.target;
+      const panel = v.closest('[role="tabpanel"]');
+      if (en.isIntersecting && !(panel && panel.hidden)) v.play().catch(() => {});
+      else v.pause();
+    });
+  }, { rootMargin: '200px' });
+  lazyClips.forEach((v) => io.observe(v));
+}
+
 // ---- mobile menu
 const burger = q('#nav-burger');
 const menu = q('#nav-menu');
 if (burger && menu) {
   burger.addEventListener('click', () => {
     const open = burger.getAttribute('aria-expanded') !== 'true';
+    // the header is not sticky, so open the menu from the top of the page
+    if (open) window.scrollTo(0, 0);
     burger.setAttribute('aria-expanded', String(open));
     menu.classList.toggle('is-open', open);
     document.documentElement.classList.toggle('menu-open', open);
   });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && burger.getAttribute('aria-expanded') === 'true') burger.click(); });
 }
+
+// ---- photo gallery: steps instantly, loops, arrows + dots + arrow keys
+qa('[data-gallery]').forEach((gal) => {
+  const slides = qa('.h-gal__slide', gal);
+  const dotsWrap = q('.h-gal__dots', gal);
+  const n = slides.length;
+  if (!n) return;
+  let current = 0;
+  const dots = slides.map((_, k) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'h-gal__dot';
+    b.setAttribute('aria-label', `Show photo ${k + 1} of ${n}`);
+    dotsWrap.appendChild(b);
+    return b;
+  });
+  const go = (k) => {
+    current = (k + n) % n;
+    slides.forEach((s, j) => { s.style.order = String((j - current + n) % n); });
+    dots.forEach((d, j) => d.setAttribute('aria-current', String(j === current)));
+  };
+  dots.forEach((d, k) => d.addEventListener('click', () => go(k)));
+  q('.h-gal__arrow--prev', gal).addEventListener('click', () => go(current - 1));
+  q('.h-gal__arrow--next', gal).addEventListener('click', () => go(current + 1));
+  gal.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') { e.preventDefault(); go(current - 1); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); go(current + 1); }
+  });
+  go(0);
+});
 
 // ---- teaser email
 const teaser = q('#teaser-form');

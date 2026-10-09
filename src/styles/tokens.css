@@ -26,6 +26,18 @@
   --aqua:    #0FFFFF;
   --purple-deep: #24013A;
 
+  /* neutrals and tints used by the approved layout */
+  --ink: #0A0A0F;              /* headline ink on white */
+  --hero-ground: #2B1050;      /* hero base under the video */
+  --lilac: #C9A6D8;            /* body copy on the purple games band */
+  --grey-1: #6B6B76;           /* body copy on white */
+  --grey-2: #8A8A93;           /* small copy on white */
+  --grey-3: #9B9B9B;           /* body copy on black */
+  --grey-4: #A9A9B5;           /* footer copy */
+  --hair: #E6E3ED;             /* hairline on white */
+  --hair-card: #D9D5E8;        /* card borders on white */
+  --hair-dark: rgba(255, 255, 255, 0.14);
+
   /* contextual */
   --bg: var(--white);
   --fg: var(--black);
@@ -38,7 +50,7 @@
 
   /* type */
   --f-sans: 'Archivo', 'Archivo Fallback', system-ui, sans-serif;
-  --f-mono: 'Martian Mono', 'Martian Mono Fallback', ui-monospace, monospace;
+  --f-mono: 'IBM Plex Mono', 'IBM Plex Mono Fallback', ui-monospace, monospace;
 
   /* layout */
   --max: 1440px;
@@ -47,14 +59,13 @@
   --wrap: min(100% - (var(--m) * 2), var(--max));
   --pad: clamp(80px, 9vw, 152px);
   --pad-s: clamp(56px, 6vw, 96px);
-  --nav-h: 72px;
+  --nav-h: 104px;
   --r: 2px;
   --pill: 999px;
 }
-@media (min-width: 1440px) { :root { --m: 64px; } }
-@media (min-width: 1024px) and (max-width: 1439.98px) { :root { --m: 48px; } }
-@media (max-width: 1023.98px) { :root { --m: 32px; --gap: 20px; } }
-@media (max-width: 767.98px)  { :root { --m: 20px; --gap: 16px; --nav-h: 60px; } }
+@media (max-width: 1179.98px) { :root { --nav-h: 80px; } }
+@media (max-width: 1023.98px) { :root { --m: 24px; --gap: 20px; } }
+@media (max-width: 767.98px)  { :root { --m: 20px; --gap: 16px; --nav-h: 72px; } }
 
 /* dark contexts flip the contextual tokens */
 .dark, [data-theme="dark"] {
