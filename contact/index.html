@@ -108,19 +108,24 @@
     </div>
 
     <div class="contact__form">
-      <form class="form" id="contact-form" novalidate>
+      <div class="cf-head">
+        <p class="cf-head__k">Request a demo</p>
+        <h2 class="cf-head__t" id="cf-h">Tell us about your space.</h2>
+        <p class="cf-head__p">Fill this in and TJ will get back to you within one business day.</p>
+      </div>
+      <form class="form cf" id="contact-form" aria-labelledby="cf-h" novalidate>
         <div class="form__row">
-          <div class="field"><label class="field__label mono" for="f-name">Name</label><input class="field__input" id="f-name" name="name" type="text" autocomplete="name" required><p class="field__error small">Enter your name.</p></div>
-          <div class="field"><label class="field__label mono" for="f-email">Email</label><input class="field__input" id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required><p class="field__error small">Enter a valid email address.</p></div>
-          <div class="field"><label class="field__label mono" for="f-phone">Phone <span class="muted">(optional)</span></label><input class="field__input" id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel"></div>
-          <div class="field"><label class="field__label mono" for="f-venue">Venue or company</label><input class="field__input" id="f-venue" name="venue" type="text" autocomplete="organization" required><p class="field__error small">Tell us the venue or company.</p></div>
-          <div class="field field--wide"><label class="field__label mono" for="f-type">Venue type</label>
+          <div class="field"><label class="field__label" for="f-name">Full name <span class="cf-req" aria-hidden="true">*</span></label><input class="field__input" id="f-name" name="name" type="text" autocomplete="name" placeholder="Alex Morgan" required><p class="field__error small">Enter your name.</p></div>
+          <div class="field"><label class="field__label" for="f-email">Email <span class="cf-req" aria-hidden="true">*</span></label><input class="field__input" id="f-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="alex@golfclub.com" required><p class="field__error small">Enter a valid email address.</p></div>
+          <div class="field"><label class="field__label" for="f-phone">Phone <span class="cf-opt">Optional</span></label><input class="field__input" id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(555) 123-4567"></div>
+          <div class="field"><label class="field__label" for="f-venue">Venue or company <span class="cf-req" aria-hidden="true">*</span></label><input class="field__input" id="f-venue" name="venue" type="text" autocomplete="organization" placeholder="Pine Valley Golf Club" required><p class="field__error small">Tell us the venue or company.</p></div>
+          <div class="field field--wide"><label class="field__label" for="f-type">Venue type</label>
             <select class="field__input" id="f-type" name="type">
               <option value="">Choose one</option>
               <option>Golf course</option><option>Country club</option><option>Driving range</option><option>Indoor simulator venue</option><option>Hotel or resort</option><option>Entertainment venue</option><option>Restaurant or bar</option><option>Other</option>
             </select>
           </div>
-          <fieldset class="field field--wide"><legend class="field__label mono">I'm interested in</legend>
+          <fieldset class="field field--wide"><legend class="field__label">I’m interested in</legend>
             <div class="choice">
               <label><input type="radio" name="interest" value="Multiplayer simulator" checked><span>Multiplayer simulator</span></label>
               <label><input type="radio" name="interest" value="Indoor range"><span>Indoor range</span></label>
@@ -128,10 +133,10 @@
               <label><input type="radio" name="interest" value="Not sure yet"><span>Not sure yet</span></label>
             </div>
           </fieldset>
-          <div class="field field--wide"><label class="field__label mono" for="f-msg">Message</label><textarea class="field__input" id="f-msg" name="message" rows="4" placeholder="Room size, ceiling height and what you want to do."></textarea></div>
+          <div class="field field--wide"><label class="field__label" for="f-msg">Message <span class="cf-opt">Optional</span></label><textarea class="field__input" id="f-msg" name="message" rows="4" placeholder="Room size, ceiling height and what you want to do."></textarea></div>
         </div>
-        <button class="btn btn--solid btn--lg" type="submit">Book a demo</button>
-        <p class="small muted">This opens an email to TJ with your note filled in.</p>
+        <button class="cf-submit" type="submit">Book a demo<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2"/></svg></button>
+        <p class="cf-note"><span class="cf-req" aria-hidden="true">*</span> Required. Sending opens an email to TJ with your details filled in.</p>
       </form>
       <div class="form__done" id="contact-done" hidden>
         <p class="h4">Your email app should open now with your note to TJ.</p>

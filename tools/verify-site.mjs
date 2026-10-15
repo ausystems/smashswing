@@ -6,11 +6,11 @@ const B = 'http://localhost:5173';
 const PAGES = ['/', '/products/', '/technology/', '/press/', '/contact/', '/consultation/'];
 const BANNED = [/—/, /hit back/i, /every ball on the screen/i, /one system/i, /case studies/i, /where it.s playing/i];
 const NEEDS = {
-  '/': ['Multi-player.', 'Vanilla ice cream vs. a hot fudge sundae.', 'Hit! Don’t Sit!', 'In the news.', 'Who it’s for'],
+  '/': ['We build golf simulators that let multiple people play at the same time.', 'Vanilla ice cream vs. a hot fudge sundae.', 'Hit! Don’t Sit!', 'In the news.', 'Who it’s for'],
   '/products/': ['Scale to fit your space.', '2 players', '6 players', 'The PING Adaptive Kit'],
   '/technology/': ['Where you hit matters.', 'Multi-player range mode', 'We fixed 3 problems with traditional simulators.'],
   '/press/': ['In the news.', 'What operators say', 'Watch SmashSwing and TJ.', 'What Topgolf’s struggles (and Chuck E. Cheese) can teach us'],
-  '/contact/': ['Book a demo.', 'SmashSwing in the news.', 'By appointment only. Not open to the public.'],
+  '/contact/': ['Book a demo.', 'Tell us about your space.', 'SmashSwing in the news.', 'By appointment only. Not open to the public.'],
   '/consultation/': ['Book a consult call with TJ', 'Get the SmashSwing overview.'],
 };
 const browser = await puppeteer.launch({ executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', headless: true, args: ['--no-sandbox', '--hide-scrollbars', '--autoplay-policy=no-user-gesture-required'] });
