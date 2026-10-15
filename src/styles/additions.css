@@ -1,0 +1,177 @@
+/* ==================================================================
+   Additions for TJ's October feedback. Nothing here moves the
+   existing layout: these rules only add the new pieces (the ice
+   cream comparison, press lists, video pop-up, play buttons, the
+   footprint sizes) and turn on the sticky header and the carousel.
+   ================================================================== */
+
+/* ---------- sticky header (TJ #5) ---------- */
+.nav { position: sticky; top: 0; }
+html { scroll-padding-top: calc(var(--nav-h) + 12px); }
+
+/* ---------- small helpers ---------- */
+.cta__addr a { white-space: nowrap; }
+.chip { white-space: nowrap; }
+button.h-link-rule { width: 100%; text-align: left; cursor: pointer; }
+.h-btn svg { width: 16px; height: 16px; margin-right: 8px; flex: none; }
+.h-pt__media img { width: 100%; height: 100%; object-fit: cover; }
+.h-founder__media, .h-fac__media { position: relative; }
+
+/* ---------- icon discs (used by the comparison) ---------- */
+.s-ico { width: 40px; height: 40px; flex: none; border-radius: 50%; display: grid; place-items: center; border: 2px solid transparent;
+  background: linear-gradient(#0B0618, #0B0618) padding-box, linear-gradient(135deg, var(--magenta), var(--aqua)) border-box; color: var(--aqua); }
+.s-ico svg { width: 20px; height: 20px; }
+
+/* ---------- play button over a photo ---------- */
+.play-over { position: absolute; inset: 0; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; width: 100%; cursor: pointer; background: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.45) 100%); }
+.play-over__btn { width: 76px; height: 76px; border-radius: 50%; display: grid; place-items: center; background: var(--white); color: var(--black); box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.24); }
+.play-over__btn svg { width: 30px; height: 30px; margin-left: 4px; }
+.play-over__txt { display: inline-flex; align-items: center; height: 32px; padding: 0 14px; border-radius: 999px; background: rgba(0, 0, 0, 0.72); color: var(--white); font-size: 13px; font-weight: 600; }
+.play-over:hover .play-over__btn { background: var(--magenta); color: var(--white); }
+.play-over:focus-visible { outline: 3px solid var(--aqua); outline-offset: -3px; }
+.h-fac__media .h-chip { z-index: 2; }
+
+/* ---------- SmashSwing vs. traditional sims (TJ's ice cream slide) ---------- */
+.h-vs { background: var(--black); color: var(--white); padding: clamp(64px, 7vw, 100px) 0; }
+.h-vs .h-head { margin-top: 44px; }
+.h-vs + .h-founder { padding-top: clamp(56px, 5vw, 72px); }
+.s-vs { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 18px; margin-top: 52px; }
+.s-vs__side { position: relative; display: flex; flex-direction: column; padding: clamp(24px, 2.6vw, 40px); border-radius: 8px; overflow: hidden; color: var(--white); }
+.s-vs__side--old { background: linear-gradient(160deg, #1C1C22 0%, #0E0E12 100%); }
+.s-vs__side--new { background: linear-gradient(160deg, #4A0570 0%, #22013A 55%, #12011F 100%); box-shadow: inset 0 0 0 2px rgba(255, 0, 110, 0.55); }
+.s-vs__tag { font-size: clamp(22px, 2.08vw, 30px); line-height: 1; font-weight: 800; text-transform: uppercase; }
+.s-vs__sub { margin-top: 10px; font-family: var(--f-mono); font-size: 11.5px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #A8A8B4; }
+.s-vs__side--new .s-vs__sub { color: var(--aqua); }
+.s-vs__img { display: block; width: auto; height: clamp(170px, 18vw, 260px); margin: 22px auto 6px; object-fit: contain; border-radius: 6px; -webkit-mask-image: radial-gradient(75% 75% at 50% 50%, #000 62%, transparent 100%); mask-image: radial-gradient(75% 75% at 50% 50%, #000 62%, transparent 100%); }
+.s-vs__list { display: grid; gap: 14px; margin-top: 18px; }
+.s-vs__list li { display: grid; grid-template-columns: auto 1fr; column-gap: 14px; align-items: center; }
+.s-vs__list strong { display: block; font-size: 16px; font-weight: 800; text-transform: uppercase; line-height: 1.15; }
+.s-vs__list span { display: block; margin-top: 3px; font-size: 14.5px; line-height: 1.4; color: #B9B9C5; }
+.s-vs__side--old .s-ico { background: linear-gradient(#0E0E12, #0E0E12) padding-box, linear-gradient(135deg, #8B8B96, #44444C) border-box; color: #C8C8D0; }
+.s-vs__side--old .s-vs__list strong { color: #D8D8DE; }
+.s-vs__side--new li:nth-child(even) .s-ico { color: var(--magenta); }
+.s-vs__name { margin-top: auto; padding-top: 26px; font-size: clamp(24px, 2.4vw, 36px); line-height: 1; font-weight: 800; font-stretch: 75%; font-style: oblique 10deg; text-transform: uppercase; color: #9C9CA8; text-align: center; }
+.s-vs__side--new .s-vs__name { color: var(--magenta); }
+.s-vs__badge { position: absolute; left: 50%; top: 50%; z-index: 2; width: 74px; height: 74px; margin: -37px 0 0 -37px; border-radius: 50%; display: grid; place-items: center; font-size: 26px; font-weight: 800; font-style: oblique 10deg; color: var(--white); border: 3px solid transparent; background: linear-gradient(#0B0618, #0B0618) padding-box, linear-gradient(135deg, var(--magenta), var(--aqua)) border-box; }
+
+/* ---------- press list ---------- */
+.s-news { margin-top: 44px; border-top: 1px solid var(--hair-card); }
+.s-news li { display: grid; grid-template-columns: 170px minmax(0, 1fr) auto; column-gap: 28px; row-gap: 8px; align-items: baseline; padding: 20px 0; border-bottom: 1px solid var(--hair-card); }
+.s-news__meta { font-family: var(--f-mono); font-size: 11px; font-weight: 600; line-height: 1.5; letter-spacing: 0.1em; text-transform: uppercase; color: var(--purple); }
+.s-news__meta span { display: block; color: var(--grey-1); }
+.s-news__t { font-size: clamp(16px, 1.3vw, 19px); line-height: 1.3; font-weight: 700; color: var(--ink); }
+.s-news .h-link { margin-top: 0; white-space: nowrap; }
+.dark .s-news, .dark .s-news li { border-color: var(--paper-16); }
+.dark .s-news__t { color: var(--white); }
+.dark .s-news__meta { color: var(--aqua); }
+.dark .s-news__meta span { color: var(--paper-55); }
+
+/* ---------- video tiles ---------- */
+.s-vids { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 48px; }
+.s-vids--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.s-vid { margin: 0; }
+.s-vid__frame { position: relative; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 4px; background: #000; }
+.s-vid__frame > img, .s-vid__frame > video, .s-vid__frame > iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; object-fit: cover; }
+.s-vid__frame > video[controls] { object-fit: contain; }
+.s-vid figcaption { display: flex; justify-content: space-between; gap: 16px; margin-top: 12px; font-size: 15px; font-weight: 700; line-height: 1.35; color: var(--ink); }
+.s-vid figcaption span { font-family: var(--f-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--purple); white-space: nowrap; padding-top: 2px; }
+.dark .s-vid figcaption { color: var(--white); }
+.dark .s-vid figcaption span { color: var(--aqua); }
+
+/* ---------- video pop-up ---------- */
+.s-dialog { width: min(1100px, 92vw); max-width: none; margin: auto; padding: 0; border: 0; border-radius: 8px; background: #000; color: var(--white); overflow: visible; }
+.s-dialog::backdrop { background: rgba(0, 0, 0, 0.84); }
+.s-dialog__frame { position: relative; aspect-ratio: 16 / 9; border-radius: 8px; overflow: hidden; background: #000; }
+.s-dialog__frame > iframe, .s-dialog__frame > video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: #000; }
+.s-dialog__title { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 12px 6px 14px; font-size: 15px; font-weight: 700; color: var(--white); }
+.s-dialog__title a { flex: none; font-size: 13px; font-weight: 600; color: var(--aqua); border-bottom: 1px solid currentColor; }
+.s-dialog__close { position: absolute; top: -50px; right: 0; width: 40px; height: 40px; border-radius: 50%; background: var(--white); color: var(--black); }
+.s-dialog__close span { position: absolute; left: 11px; right: 11px; top: 50%; height: 2px; background: currentColor; }
+.s-dialog__close span:first-child { transform: rotate(45deg); }
+.s-dialog__close span:last-child { transform: rotate(-45deg); }
+
+/* ---------- carousel: it scrolls, swipes and moves on its own (TJ #4) ---------- */
+.h-gal__viewport { overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; }
+.h-gal__viewport::-webkit-scrollbar { display: none; }
+.h-gal__slide { scroll-snap-align: start; overflow: hidden; }
+.h-gal__viewport:focus-visible { outline: 2px solid var(--aqua); outline-offset: 4px; }
+.h-gal__dots { flex-wrap: wrap; padding: 0 34px; }
+.h-gal__toggle { position: absolute; right: 10px; bottom: 0; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; gap: 3px; color: var(--black); opacity: 0.5; }
+.h-gal__toggle:hover, .h-gal__toggle:focus-visible { opacity: 1; }
+.h-gal__toggle::before, .h-gal__toggle::after { content: ''; width: 3px; height: 10px; background: currentColor; }
+.h-gal__toggle.is-paused::after { display: none; }
+.h-gal__toggle.is-paused::before { width: 0; height: 0; margin-left: 3px; background: none; border-style: solid; border-width: 5px 0 5px 9px; border-color: transparent transparent transparent currentColor; }
+
+/* ---------- homepage headline: keep "Multi-player." on one line ---------- */
+.h-hero__title { font-size: clamp(40px, calc(7.2vw - 4px), 100px); }
+.h-hero__title span, .h-hero__title em { white-space: nowrap; }
+
+/* ---------- technology hero: real render behind the text (was an AI graphic) ---------- */
+.tech-hero__bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.tech-hero__bg img { width: 100%; height: 100%; object-fit: cover; object-position: 62% 45%; }
+.tech-hero__bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.76) 48%, rgba(0, 0, 0, 0.52) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0) 46%); }
+.tech-hero__in { z-index: 1; }
+.tech-hero__cap { display: flex; flex-wrap: wrap; gap: 8px 24px; padding-bottom: clamp(24px, 3vw, 40px); color: var(--label); }
+
+/* ---------- footprint sizes (TJ's slide 9) ---------- */
+.s-sizes { display: flex; align-items: flex-end; gap: clamp(10px, 1.2vw, 18px); }
+.s-size { flex: var(--w) 1 0; min-width: 0; margin: 0; }
+.s-size img { display: block; width: 100%; height: auto; border-radius: 6px; }
+.s-size figcaption { margin-top: 12px; }
+.s-size strong { display: block; font-size: clamp(17px, 1.53vw, 22px); line-height: 1.05; font-weight: 800; text-transform: uppercase; }
+.s-size span { display: block; margin-top: 4px; font-family: var(--f-mono); font-size: 11.5px; font-weight: 600; line-height: 1.45; letter-spacing: 0.04em; color: var(--purple); }
+.s-ico--sm { width: 40px; height: 40px; }
+.s-ico--sm svg { width: 20px; height: 20px; }
+.s-adaptive { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.4fr); margin-top: 40px; border-radius: 8px; overflow: hidden; background: #0B0618; color: var(--white); }
+.s-adaptive img { width: 100%; height: 100%; object-fit: cover; }
+.s-adaptive__body { padding: clamp(22px, 2.4vw, 36px); display: flex; flex-direction: column; justify-content: center; }
+.s-adaptive__k { font-family: var(--f-mono); font-size: 11.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--aqua); }
+.s-adaptive__t { margin-top: 10px; font-size: clamp(22px, 2.08vw, 30px); line-height: 1; font-weight: 800; text-transform: uppercase; }
+.s-adaptive__p { margin-top: 10px; font-size: 16px; line-height: 1.5; color: #C3C3CE; }
+.s-adaptive__who { display: flex; flex-wrap: wrap; gap: 14px 26px; margin-top: 20px; }
+.s-adaptive__who li { display: flex; align-items: center; gap: 10px; font-size: 14.5px; font-weight: 700; text-transform: uppercase; line-height: 1.2; }
+
+/* ---------- products: two venue photos ---------- */
+.venues__media { aspect-ratio: 16 / 7; }
+.venues__media img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ---------- press: operator video next to the quote ---------- */
+.op-video { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap); row-gap: 32px; align-items: center; }
+.op-video .testimonial { grid-column: 1 / span 5; }
+.op-video .testimonial p { text-indent: 0; }
+.op-video .media { grid-column: 6 / span 7; }
+.op-video video { width: 100%; height: 100%; object-fit: cover; background: #000; }
+
+/* ---------- contact: map ---------- */
+.map { padding-bottom: clamp(48px, 6vw, 88px); }
+.map iframe { display: block; width: 100%; height: clamp(220px, 22vw, 320px); border: 0; border-radius: 4px; }
+
+/* ==================================================================
+   Tablet and phone
+   ================================================================== */
+@media (max-width: 1023.98px) {
+  .h-hero__title { font-size: clamp(40px, 7.6vw, 72px); }
+  .op-video .testimonial, .op-video .media { grid-column: 1 / -1; }
+  .s-vids--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .s-news li { grid-template-columns: 150px minmax(0, 1fr); }
+  .s-news .h-link { grid-column: 2; justify-self: start; }
+}
+@media (max-width: 767.98px) {
+  .h-hero__title { font-size: clamp(30px, 10vw, 46px); }
+  .s-sizes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: end; gap: 22px 12px; }
+  .s-adaptive { grid-template-columns: minmax(0, 1fr); }
+  .s-adaptive img { aspect-ratio: 16 / 10; }
+  .venues__media { aspect-ratio: 16 / 10; }
+  .h-vs .h-head { margin-top: 24px; }
+  .s-vs { grid-template-columns: minmax(0, 1fr); gap: 46px; margin-top: 36px; }
+  .s-vs__badge { position: relative; left: auto; top: auto; margin: -64px auto; }
+  .s-vids, .s-vids--3 { grid-template-columns: minmax(0, 1fr); margin-top: 36px; }
+  .s-news li { grid-template-columns: minmax(0, 1fr); text-align: left; }
+  .s-news .h-link { grid-column: 1; }
+  .play-over__btn { width: 60px; height: 60px; }
+  .products-band .tabs { display: flex; width: 100%; }
+  .products-band .tab { flex: 1 1 0; min-width: 0; height: auto; min-height: 44px; padding: 6px 8px; white-space: normal; text-align: center; line-height: 1.2; }
+  .h-gal__dot { width: 16px; }
+  .h-gal__toggle { right: 0; }
+  .s-dialog__close { top: -46px; }
+}

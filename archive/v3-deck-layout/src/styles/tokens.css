@@ -1,0 +1,80 @@
+/* ------------------------------------------------------------------
+   SmashSwing v2 — tokens
+   Main site: black and white only. Brand accents (from the logo SVG)
+   appear only in game and interactive contexts.
+   ------------------------------------------------------------------ */
+:root {
+  --white: #FFFFFF;
+  --black: #000000;
+
+  /* ink on white */
+  --ink-70: rgba(0, 0, 0, 0.70);
+  --ink-55: rgba(0, 0, 0, 0.55);
+  --ink-30: rgba(0, 0, 0, 0.30);
+  --ink-12: rgba(0, 0, 0, 0.12);
+  --ink-06: rgba(0, 0, 0, 0.06);
+  /* paper on black */
+  --paper-70: rgba(255, 255, 255, 0.70);
+  --paper-55: rgba(255, 255, 255, 0.55);
+  --paper-30: rgba(255, 255, 255, 0.30);
+  --paper-16: rgba(255, 255, 255, 0.16);
+  --paper-08: rgba(255, 255, 255, 0.08);
+
+  /* brand — exact values from SS_PRIMARY-Logo-Files-02.svg */
+  --purple:  #3B0259;
+  --magenta: #FF006E;
+  --aqua:    #0FFFFF;
+  --purple-deep: #24013A;
+
+  /* neutrals and tints used by the approved layout */
+  --ink: #0A0A0F;              /* headline ink on white */
+  --hero-ground: #2B1050;      /* hero base under the video */
+  --lilac: #C9A6D8;            /* body copy on the purple games band */
+  --grey-1: #6B6B76;           /* body copy on white */
+  --grey-2: #8A8A93;           /* small copy on white */
+  --grey-3: #9B9B9B;           /* body copy on black */
+  --grey-4: #A9A9B5;           /* footer copy */
+  --hair: #E6E3ED;             /* hairline on white */
+  --hair-card: #D9D5E8;        /* card borders on white */
+  --hair-dark: rgba(255, 255, 255, 0.14);
+
+  /* contextual */
+  --bg: var(--white);
+  --fg: var(--black);
+  --fg-2: var(--ink-55);
+  --line: rgba(59, 2, 89, 0.16);      /* purple-tinted hairline on white */
+  --line-strong: var(--black);
+  --label: var(--purple);              /* mono labels on white */
+  --index: var(--magenta);             /* index numerals everywhere */
+  --tint: rgba(59, 2, 89, 0.06);
+
+  /* type */
+  --f-sans: 'Archivo', 'Archivo Fallback', system-ui, sans-serif;
+  --f-mono: 'IBM Plex Mono', 'IBM Plex Mono Fallback', ui-monospace, monospace;
+
+  /* layout */
+  --max: 1440px;
+  --m: 40px;
+  --gap: 24px;
+  --wrap: min(100% - (var(--m) * 2), var(--max));
+  --pad: clamp(80px, 9vw, 152px);
+  --pad-s: clamp(56px, 6vw, 96px);
+  --nav-h: 80px;
+  --r: 2px;
+  --pill: 999px;
+}
+@media (max-width: 1179.98px) { :root { --nav-h: 70px; } }
+@media (max-width: 1023.98px) { :root { --m: 24px; --gap: 20px; } }
+@media (max-width: 767.98px)  { :root { --m: 20px; --gap: 16px; --nav-h: 64px; } }
+
+/* dark contexts flip the contextual tokens */
+.dark, [data-theme="dark"] {
+  --bg: var(--black); --fg: var(--white); --fg-2: var(--paper-55);
+  --line: rgba(15, 255, 255, 0.18); --line-strong: var(--white);
+  --label: rgba(15, 255, 255, 0.82); --tint: rgba(15, 255, 255, 0.05);
+}
+/* the games context: purple ground, aqua lines, magenta marks */
+.game {
+  --bg: var(--purple); --fg: var(--white); --fg-2: rgba(255, 255, 255, 0.62);
+  --line: rgba(15, 255, 255, 0.28); --line-strong: var(--aqua); --label: var(--aqua);
+}

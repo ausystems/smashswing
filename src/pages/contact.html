@@ -3,7 +3,8 @@
     <p class="page-head__label mono"><span>Contact</span><span>Reply within one business day</span></p>
     <h1 class="d1 page-head__title" id="ph">Book a demo.</h1>
     <div class="page-head__aside">
-      <p class="lead">See it in Lewisville, or we'll bring it to you. Tell us about the room and we'll come back with the format that fits.</p>
+      <p class="lead">Pick a time on TJ’s calendar for a 30-minute remote demo. Or send a note about your space below.</p>
+      <a class="link" href="{{CAL}}" target="_blank" rel="noopener">Pick a time on TJ’s calendar</a>
     </div>
   </div>
 </section>
@@ -12,16 +13,14 @@
   <div class="wrap contact__grid">
     <div class="contact__info">
       <dl class="spec mono-lg">
-        <div class="spec__row"><dt>Showroom</dt><dd>550 W Round Grove Rd, Suite 500<br>Lewisville, TX 75067</dd></div>
-        <div class="spec__row"><dt>Visits</dt><dd>By appointment</dd></div>
-        <div class="spec__row" data-placeholder="true" data-asset="Contact email · confirm"><dt>Email</dt><dd><a href="mailto:hello@smashswing.com">hello@smashswing.com</a></dd></div>
+        <div class="spec__row"><dt>Demo facility</dt><dd>550 W Round Grove Rd, Suite 500<br>Lewisville, TX 75067</dd></div>
+        <div class="spec__row"><dt>Visits</dt><dd>By appointment only. Not open to the public.</dd></div>
+        <div class="spec__row"><dt>Email</dt><dd><a href="mailto:tj@smashswing.golf">tj@smashswing.golf</a></dd></div>
+        <div class="spec__row"><dt>Phone</dt><dd><a href="tel:+19726796330">(972) 679-6330</a></dd></div>
       </dl>
       <div class="cells contact__steps">
-        <div class="cell"><div class="cell__body"><p class="cell__idx mono">01</p><h3 class="cell__title h4">We call within one business day</h3><p class="cell__copy small">A short conversation about the room: square footage, ceiling height, what plays there today.</p></div></div>
-        <div class="cell"><div class="cell__body"><p class="cell__idx mono">02</p><h3 class="cell__title h4">A twenty-minute walkthrough</h3><p class="cell__copy small">Both formats, the games, the numbers from Mequon and Lewisville.</p></div></div>
-        <div class="cell"><div class="cell__body"><p class="cell__idx mono">03</p><h3 class="cell__title h4">A showroom session or a site visit</h3><p class="cell__copy small">Hit balls at the hundred-foot screen in Lewisville, or we bring a bay to you.</p></div></div>
+        <div class="cell"><div class="cell__body"><p class="cell__idx mono">Demo</p><h3 class="cell__title h4">A focused 30-minute remote demo</h3><p class="cell__copy small">See SmashSwing and the setup that fits your space.</p></div></div>
       </div>
-      <div class="media media--16x9" data-placeholder="true" data-asset="Showroom still"><img src="/img/still-flags.webp" alt="" width="1600" height="900" loading="lazy" decoding="async"></div>
     </div>
 
     <div class="contact__form">
@@ -30,30 +29,51 @@
           <div class="field"><label class="field__label mono" for="f-name">Name</label><input class="field__input" id="f-name" name="name" type="text" autocomplete="name" required><p class="field__error small">Enter your name.</p></div>
           <div class="field"><label class="field__label mono" for="f-email">Email</label><input class="field__input" id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required><p class="field__error small">Enter a valid email address.</p></div>
           <div class="field"><label class="field__label mono" for="f-phone">Phone <span class="muted">(optional)</span></label><input class="field__input" id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel"></div>
-          <div class="field"><label class="field__label mono" for="f-venue">Venue or company</label><input class="field__input" id="f-venue" name="venue" type="text" autocomplete="organization" required><p class="field__error small">Tell us the venue.</p></div>
+          <div class="field"><label class="field__label mono" for="f-venue">Venue or company</label><input class="field__input" id="f-venue" name="venue" type="text" autocomplete="organization" required><p class="field__error small">Tell us the venue or company.</p></div>
           <div class="field field--wide"><label class="field__label mono" for="f-type">Venue type</label>
             <select class="field__input" id="f-type" name="type">
               <option value="">Choose one</option>
-              <option>Golf club</option><option>Entertainment venue</option><option>Driving range or pro shop</option><option>Developer or landlord</option><option>Municipal or parks</option><option>Other</option>
+              <option>Golf course</option><option>Country club</option><option>Driving range</option><option>Indoor simulator venue</option><option>Hotel or resort</option><option>Entertainment venue</option><option>Restaurant or bar</option><option>Other</option>
             </select>
           </div>
           <fieldset class="field field--wide"><legend class="field__label mono">I'm interested in</legend>
             <div class="choice">
-              <label><input type="radio" name="interest" value="simulator" checked><span>Multiplayer Simulator</span></label>
-              <label><input type="radio" name="interest" value="range"><span>Cinematic Indoor Range</span></label>
-              <label><input type="radio" name="interest" value="unsure"><span>Not sure yet</span></label>
+              <label><input type="radio" name="interest" value="Multiplayer simulator" checked><span>Multiplayer simulator</span></label>
+              <label><input type="radio" name="interest" value="Indoor range"><span>Indoor range</span></label>
+              <label><input type="radio" name="interest" value="Practice campus"><span>Practice campus</span></label>
+              <label><input type="radio" name="interest" value="Not sure yet"><span>Not sure yet</span></label>
             </div>
           </fieldset>
-          <div class="field field--wide"><label class="field__label mono" for="f-msg">Message</label><textarea class="field__input" id="f-msg" name="message" rows="4" placeholder="Square footage, ceiling height, what plays there today."></textarea></div>
+          <div class="field field--wide"><label class="field__label mono" for="f-msg">Message</label><textarea class="field__input" id="f-msg" name="message" rows="4" placeholder="Room size, ceiling height and what you want to do."></textarea></div>
         </div>
         <button class="btn btn--solid btn--lg" type="submit">Book a demo</button>
-        <p class="small muted">No mailing list. One reply, from a person.</p>
+        <p class="small muted">This opens an email to TJ with your note filled in.</p>
       </form>
       <div class="form__done" id="contact-done" hidden>
-        <p class="h4">Thanks. We'll be in touch within one business day.</p>
-        <p class="small muted" style="margin-top:12px">In the meantime, the Technology page explains what makes the screen hit back.</p>
-        <p style="margin-top:24px"><a class="link" href="/technology/">See the technology</a></p>
+        <p class="h4">Your email app should open now with your note to TJ.</p>
+        <p class="small muted" style="margin-top:12px">Press send there. Prefer to talk? Pick a time on TJ’s calendar.</p>
+        <p style="margin-top:24px"><a class="link" href="{{CAL}}" target="_blank" rel="noopener">Book a call</a></p>
       </div>
     </div>
   </div>
+</section>
+
+<!-- in the news (this section is on the current Hostinger contact page) -->
+<section class="section section--line" id="news" aria-labelledby="news-h">
+  <div class="wrap">
+    <div class="head">
+      <p class="head__label mono"><span>03</span><span>Press</span></p>
+      <h2 class="d2 head__title" id="news-h">SmashSwing in the news.</h2>
+      <div class="head__aside"><p class="lead">Press releases and articles. For media questions, email <a href="mailto:tj@smashswing.golf">tj@smashswing.golf</a>.</p><a class="link" href="/press/">See all press</a></div>
+    </div>
+    <ul class="s-news" style="margin-top:0">
+      <li><p class="s-news__meta">Apr 30, 2026<span>Press release</span></p><h3 class="s-news__t">Heritage Golf Group installs SmashSwing at The River Club of Mequon</h3><a class="h-link" href="https://www.prnewswire.com/news-releases/heritage-golf-group-installs-smashswing-at-the-river-club-of-mequon-302758620.html" target="_blank" rel="noopener">Read the release</a></li>
+      <li><p class="s-news__meta">Jul 29, 2025<span>Press release</span></p><h3 class="s-news__t">SmashSwing to build a first-of-its-kind big screen indoor range at Beyond Golf Chico</h3><a class="h-link" href="https://www.prnewswire.com/news-releases/smashswing-immersive-to-partner-with-beyond-golf-chico-on-a-first-of-its-kind-big-screen-indoor-gamified-driving-range-302514114.html" target="_blank" rel="noopener">Read the release</a></li>
+      <li><p class="s-news__meta">Jun 26, 2025<span>Press release</span></p><h3 class="s-news__t">SmashSwing signs a game licensing deal with Atari</h3><a class="h-link" href="https://www.prnewswire.com/news-releases/smashswing-immersive-announces-licensed-intellectual-property-ip-agreement-with-atari-302491181.html" target="_blank" rel="noopener">Read the release</a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="map" aria-label="Map of the SmashSwing demo facility">
+  <div class="wrap"><iframe title="Map: SmashSwing demo facility, 550 W Round Grove Rd, Suite 500, Lewisville, TX" src="https://maps.google.com/maps?q=550%20W%20Round%20Grove%20Rd%2C%20Suite%20500%20Lewisville%2C%20TX&amp;t=m&amp;z=15&amp;output=embed&amp;iwloc=near" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
 </section>

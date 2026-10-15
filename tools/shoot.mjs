@@ -5,7 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 const out = process.argv[2] || 'qa';
 fs.mkdirSync(out, { recursive: true });
-const PAGES = ['/', '/products/', '/technology/', '/case-studies/', '/contact/'];
+const PAGES = ['/', '/products/', '/technology/', '/press/', '/contact/', '/consultation/'];
 const SIZES = [[1440, 900], [390, 844]];
 const browser = await puppeteer.launch({ executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', headless: true, args: ['--no-sandbox', '--hide-scrollbars', '--autoplay-policy=no-user-gesture-required'] });
 const report = [];

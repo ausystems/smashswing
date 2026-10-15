@@ -1,0 +1,68 @@
+<section class="p-hero" aria-labelledby="ph">
+  <div class="wrap p-hero__grid">
+    <div>
+      <p class="h-label"><span>Book a demo</span></p>
+      <h1 class="p-hero__title" id="ph">Book a <em>demo.</em></h1>
+      <p class="p-hero__lead">Pick a time for a 30-minute call with founder TJ Schier. We will show you how SmashSwing fits your space.</p>
+      <div class="h-btns">
+        <a class="h-btn h-btn--white" href="{{CAL}}" target="_blank" rel="noopener">Pick a time on TJ’s calendar</a>
+      </div>
+    </div>
+    <figure class="p-hero__media">
+      <img src="/img/photos/smiles.webp" alt="Members enjoying a SmashSwing event" width="1600" height="900" decoding="async" fetchpriority="high">
+      <figcaption class="p-hero__badge"><i></i>Demos in Lewisville, Texas by request</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="s-sec" aria-labelledby="ways-h">
+  <div class="wrap">
+    <p class="h-label"><span>Three ways to reach us</span></p>
+    <h2 class="sr-only" id="ways-h">Three ways to reach us</h2>
+    <div class="s-ways" style="margin-top:30px">
+      <div class="s-way"><span class="s-ico"><svg aria-hidden="true"><use href="#i-calendar"/></svg></span><h3>Book a call</h3><p>Pick a 30-minute time on TJ’s calendar. It takes one minute.</p><a class="h-btn h-btn--dark" href="{{CAL}}" target="_blank" rel="noopener">Book a demo</a></div>
+      <div class="s-way"><span class="s-ico"><svg aria-hidden="true"><use href="#i-mail"/></svg></span><h3>Email TJ</h3><p>Tell us about your space and what you want to build.</p><a class="h-link-ul" href="mailto:tj@smashswing.golf">tj@smashswing.golf</a></div>
+      <div class="s-way"><span class="s-ico"><svg aria-hidden="true"><use href="#i-phone"/></svg></span><h3>Call TJ</h3><p>Talk it through on the phone.</p><a class="h-link-ul" href="tel:+19726796330">(972) 679-6330</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="s-sec s-sec--tint" aria-labelledby="note-h">
+  <div class="wrap">
+    <p class="h-label"><span>Send a note</span></p>
+    <div class="h-head">
+      <h2 class="h-h2" id="note-h">Tell us about your space.</h2>
+      <div class="h-head__aside"><p class="h-lead">Fill this in and press send. Your email app opens with your note ready to go to TJ.</p></div>
+    </div>
+    <form class="form s-form" id="contact-form" novalidate>
+      <div class="form__row">
+        <div class="field"><label class="field__label mono" for="f-name">Name</label><input class="field__input" id="f-name" name="name" type="text" autocomplete="name" required><p class="field__error small">Enter your name.</p></div>
+        <div class="field"><label class="field__label mono" for="f-email">Email</label><input class="field__input" id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required><p class="field__error small">Enter a valid email address.</p></div>
+        <div class="field"><label class="field__label mono" for="f-phone">Phone (optional)</label><input class="field__input" id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel"></div>
+        <div class="field"><label class="field__label mono" for="f-venue">Venue or company</label><input class="field__input" id="f-venue" name="venue" type="text" autocomplete="organization" required><p class="field__error small">Tell us the venue or company.</p></div>
+        <div class="field field--wide"><label class="field__label mono" for="f-type">Type of venue</label>
+          <select class="field__input" id="f-type" name="type">
+            <option value="">Choose one</option>
+            <option>Golf course</option><option>Country club</option><option>Driving range</option><option>Indoor simulator venue</option><option>Hotel or resort</option><option>Entertainment venue</option><option>Restaurant or bar</option><option>Other</option>
+          </select>
+        </div>
+        <fieldset class="field field--wide"><legend class="field__label mono">I’m interested in</legend>
+          <div class="choice">
+            <label><input type="radio" name="interest" value="2–6 player multiplayer simulator" checked><span>2–6 player simulator</span></label>
+            <label><input type="radio" name="interest" value="Indoor range"><span>Indoor range</span></label>
+            <label><input type="radio" name="interest" value="Practice campus"><span>Practice campus</span></label>
+            <label><input type="radio" name="interest" value="Consulting with TJ"><span>Consulting</span></label>
+            <label><input type="radio" name="interest" value="Not sure yet"><span>Not sure yet</span></label>
+          </div>
+        </fieldset>
+        <div class="field field--wide"><label class="field__label mono" for="f-msg">Message</label><textarea class="field__input" id="f-msg" name="message" rows="4" placeholder="Room size, ceiling height and what you want to do."></textarea></div>
+      </div>
+      <button class="h-btn h-btn--dark h-btn--lg" type="submit">Send to TJ</button>
+      <p class="s-form__note">If your email app does not open, email <a class="h-link-ul" style="margin-top:0;font-size:inherit" href="mailto:tj@smashswing.golf">tj@smashswing.golf</a>.</p>
+    </form>
+    <div class="form__done" id="contact-done" hidden>
+      <p class="h4" style="font-size:20px;font-weight:700">Your email app should open now with your note to TJ.</p>
+      <p style="margin-top:12px">Just press send there. Prefer to talk? <a class="h-link-ul" style="margin-top:0;font-size:inherit" href="{{CAL}}" target="_blank" rel="noopener">Book a call on TJ’s calendar</a>.</p>
+    </div>
+  </div>
+</section>

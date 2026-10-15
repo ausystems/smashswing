@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "assets": "python3 tools/gen-assets.py",
     "qa": "node tools/shoot.mjs qa",
-    "verify": "node tools/verify-home.mjs"
+    "verify": "node tools/verify-site.mjs"
   },
   "dependencies": {
     "gsap": "^3.12.5",
