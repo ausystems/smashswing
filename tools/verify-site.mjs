@@ -6,10 +6,10 @@ const B = 'http://localhost:5173';
 const PAGES = ['/', '/products/', '/technology/', '/press/', '/contact/', '/consultation/'];
 const BANNED = [/—/, /hit back/i, /every ball on the screen/i, /one system/i, /case studies/i, /where it.s playing/i];
 const NEEDS = {
-  '/': ['We build golf simulators that let multiple people play at the same time.', 'Vanilla ice cream vs. a hot fudge sundae.', 'Hit! Don’t Sit!', 'In the news.', 'Who it’s for'],
+  '/': ['HIT, Don’t Sit! Multiplayer, multi-ball tracking indoor golf tech', 'Financing available', 'Vanilla ice cream vs. a hot fudge sundae.', 'Hit! Don’t Sit!', 'In the news.', 'Who it’s for'],
   '/products/': ['Scale to fit your space.', '2 players', '6 players', 'The PING Adaptive Kit'],
   '/technology/': ['Where you hit matters.', 'Multi-player range mode', 'We fixed 3 problems with traditional simulators.'],
-  '/press/': ['In the news.', 'What operators say', 'Watch SmashSwing and TJ.', 'What Topgolf’s struggles (and Chuck E. Cheese) can teach us'],
+  '/press/': ['In the news.', 'What operators say', 'Watch SmashSwing and TJ.', 'Golf Business Tech Conference keynote', 'eMYRge golf tech presentation', 'What Topgolf’s struggles (and Chuck E. Cheese) can teach us'],
   '/contact/': ['Book a demo.', 'Tell us about your space.', 'SmashSwing in the news.', 'By appointment only. Not open to the public.'],
   '/consultation/': ['Book a consult call with TJ', 'Get the SmashSwing overview.'],
 };
@@ -39,6 +39,8 @@ for (const path of PAGES) {
   for (const s of NEEDS[path]) check(`${path} says "${s}"`, text.toLowerCase().includes(s.toLowerCase()));
   check(`${path} header is sticky`, await p.evaluate(() => getComputedStyle(document.querySelector('.nav')).position === 'sticky'));
   check(`${path} nav has Press`, await p.evaluate(() => [...document.querySelectorAll('.nav__links a')].some((a) => a.textContent.trim() === 'Press')));
+  if (path !== '/consultation/') check(`${path} financing link goes to Brickhouse`, await p.evaluate(() => [...document.querySelectorAll('a')].some((a) => a.href === 'https://partners.brickhousecapital.com/smash-swing-immersive-golf/' && /financing available/i.test(a.textContent))));
+  if (path === '/press/') check('/press/ has no old keynote or workshop', !/keynote highlights|workshop/i.test(text));
   check(`${path} Book a demo goes to Calendly`, await p.evaluate(() => document.querySelector('.nav__cta').href.startsWith('https://calendly.com/')));
   (await p.evaluate(() => [...document.querySelectorAll('a[href^="/"], img[src^="/"], video[poster^="/"], source[src^="/"]')].map((e) => e.getAttribute('href') || e.getAttribute('src') || e.getAttribute('poster')))).forEach((u) => links.add(u.split('#')[0]));
   await p.close();
@@ -68,6 +70,13 @@ await p.evaluate(() => document.querySelector('.h-founder .play-over').click());
 check('overview opens in the pop-up', await p.evaluate(() => document.querySelector('#video-dialog').open && /vimeo\.com\/video\/1213445891/.test(document.querySelector('.s-dialog__frame iframe')?.src || '')));
 await p.keyboard.press('Escape'); await sleep(300);
 check('Esc closes it and stops the video', await p.evaluate(() => !document.querySelector('#video-dialog').open && !document.querySelector('.s-dialog__frame').children.length));
+await p.close();
+p = await open('/press/');
+await p.evaluate(() => document.querySelector('[data-video="gbtc"]').click()); await sleep(600);
+check('GBTC keynote opens in the pop-up', await p.evaluate(() => /vimeo\.com\/video\/1087479091\?h=6a324a2f1a/.test(document.querySelector('.s-dialog__frame iframe')?.src || '')));
+await p.keyboard.press('Escape'); await sleep(300);
+await p.close();
+p = await open('/');
 await p.evaluate(() => document.querySelector('[data-video="virtual"]').click()); await sleep(1500);
 check('virtual courses clip plays', await p.evaluate(() => { const v = document.querySelector('.s-dialog__frame video'); return !!v && !v.paused; }));
 await p.evaluate(() => document.querySelector('[data-close-dialog]').click());

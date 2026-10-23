@@ -113,9 +113,14 @@ button.h-link-rule { width: 100%; text-align: left; cursor: pointer; }
 .h-hero__title span, .h-hero__title em { white-space: nowrap; }
 
 /* ---------- homepage headline, long version ---------- */
-.h-hero__title--long { grid-column: 1 / span 8; font-size: clamp(34px, calc(4.25vw - 5px), 61px); line-height: 1.02; letter-spacing: -0.005em; }
+.h-hero__title--long { grid-column: 1 / span 8; font-size: clamp(34px, calc(4.1vw - 5px), 58px); line-height: 1.02; letter-spacing: -0.005em; }
 .h-hero__title--long span, .h-hero__title--long em { display: block; white-space: nowrap; }
 .h-hero__title--long em { margin-top: 0.06em; background: linear-gradient(90deg, var(--magenta) 0%, var(--magenta) 55%, #FF4FA0 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.h-hero__title--long em:first-child { margin: 0 0 0.08em; }
+.h-finance { margin-top: 22px; }
+.h-finance a { display: inline-flex; align-items: center; gap: 8px; padding-bottom: 4px; border-bottom: 1px solid currentColor; font-size: 12px; font-weight: 700; line-height: 1.5; letter-spacing: 0.14em; text-transform: uppercase; color: var(--aqua); }
+.h-finance a:hover { color: var(--white); }
+.h-finance svg { width: 15px; height: 15px; flex: none; }
 
 /* ---------- contact form: a clear, boxed form card ---------- */
 .contact__form { position: relative; background: var(--white); border: 1px solid #E3E3EA; border-radius: 14px; box-shadow: 0 1px 2px rgba(11, 6, 24, 0.04), 0 24px 60px -24px rgba(59, 2, 89, 0.28); padding: clamp(24px, 3vw, 44px); overflow: hidden; }

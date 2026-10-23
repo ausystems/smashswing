@@ -144,8 +144,7 @@ qa('[data-gallery]').forEach((gal) => {
 const BASE = import.meta.env.BASE_URL;
 const VIDEOS = {
   overview: { title: 'SmashSwing system overview, with TJ Schier', embed: 'https://player.vimeo.com/video/1213445891?h=115773e909&autoplay=1&dnt=1', page: 'https://vimeo.com/1213445891/115773e909', site: 'Vimeo' },
-  keynote: { title: 'TJ Schier keynote highlights', embed: 'https://player.vimeo.com/video/278068188?autoplay=1&dnt=1', page: 'https://vimeo.com/278068188', site: 'Vimeo' },
-  workshop: { title: 'TJ Schier workshop', embed: 'https://www.youtube-nocookie.com/embed/vTVzdt5Xwp0?autoplay=1&rel=0', page: 'https://www.youtube.com/watch?v=vTVzdt5Xwp0', site: 'YouTube' },
+  gbtc: { title: 'TJ’s Golf Business Tech Conference keynote', embed: 'https://player.vimeo.com/video/1087479091?h=6a324a2f1a&autoplay=1&dnt=1', page: 'https://vimeo.com/1087479091/6a324a2f1a', site: 'Vimeo' },
   virtual: { title: 'First look: multiplayer virtual courses, coming 2027', file: `${BASE}video/virtual-courses.mp4` },
   teaser: { title: 'SmashSwing teaser reel', file: `${BASE}video/teaser-reel.mp4` },
   riverclub: { title: 'The River Club of Mequon, in their words', file: `${BASE}video/river-club.mp4` },
