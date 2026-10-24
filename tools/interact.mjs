@@ -39,12 +39,7 @@ await page.goto('http://localhost:5173/contact/', { waitUntil: 'networkidle0' })
 await page.click('#contact-form button[type="submit"]');
 report.contactInvalid = await page.evaluate(() => ({ errors: document.querySelectorAll('#contact-form .field.is-error').length, focused: document.activeElement.id }));
 await page.screenshot({ path: `${out}/contact-errors.png` });
-await page.type('#f-name', 'Ahmad Khalid');
-await page.type('#f-email', 'ahmad@example.com');
-await page.type('#f-venue', 'Range Test Club');
-await page.click('#contact-form button[type="submit"]');
-report.contactDone = await page.evaluate(() => ({ formHidden: document.getElementById('contact-form').hidden, doneHidden: document.getElementById('contact-done').hidden }));
-await page.screenshot({ path: `${out}/contact-done.png` });
+// never submit a filled contact form in tests: it opens a real email to TJ
 
 // keyboard path on home: count focusable stops and check the focus ring
 await page.goto('http://localhost:5173/', { waitUntil: 'networkidle0' });

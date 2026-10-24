@@ -40,6 +40,8 @@ for (const path of PAGES) {
   check(`${path} header is sticky`, await p.evaluate(() => getComputedStyle(document.querySelector('.nav')).position === 'sticky'));
   check(`${path} nav has Press`, await p.evaluate(() => [...document.querySelectorAll('.nav__links a')].some((a) => a.textContent.trim() === 'Press')));
   if (path !== '/consultation/') check(`${path} financing link goes to Brickhouse`, await p.evaluate(() => [...document.querySelectorAll('a')].some((a) => a.href === 'https://partners.brickhousecapital.com/smash-swing-immersive-golf/' && a.textContent.trim() === 'Financing Available' && a.target === '_blank')));
+  check(`${path} Financing Available in nav, menu and footer`, await p.evaluate(() => ['.nav__links', '.nav__menu', '.footer'].every((s) => [...document.querySelectorAll(`${s} a`)].some((a) => a.href === 'https://partners.brickhousecapital.com/smash-swing-immersive-golf/' && a.textContent.trim() === 'Financing Available' && a.target === '_blank'))));
+  if (path === '/') check('/ founder thumbnail is the overview video frame', await p.evaluate(() => document.querySelector('.h-founder__media img').getAttribute('src').endsWith('founder-overview.webp')));
   if (path === '/') check('/ headline is TJ’s exact wording', await p.evaluate(() => document.querySelector('#hero-h').textContent.replace(/\s+/g, ' ').trim() === 'HIT, Don’t Sit! Multiplayer, multi-ball tracking indoor golf tech'));
   if (path === '/press/') check('/press/ has no old keynote or workshop', !/keynote highlights|workshop/i.test(text));
   check(`${path} Book a demo goes to Calendly`, await p.evaluate(() => document.querySelector('.nav__cta').href.startsWith('https://calendly.com/')));
@@ -100,17 +102,10 @@ check('mobile menu opens under the header without jumping', await p.evaluate(() 
 await p.keyboard.press('Escape');
 await p.close();
 
-// contact form: empty submit shows errors, a full one opens an email to TJ
+// contact form: empty submit shows errors. Never submit a filled form here: it opens a real email to TJ.
 p = await open('/contact/');
 await p.click('#contact-form button[type="submit"]'); await sleep(200);
 check('empty form shows errors', (await p.evaluate(() => document.querySelectorAll('.field.is-error').length)) === 3);
-await p.type('#f-name', 'Test Person'); await p.type('#f-email', 'test@example.com'); await p.type('#f-venue', 'Test Golf Club');
-let mailto = '';
-const cdp = await p.createCDPSession();
-await cdp.send('Page.enable');
-cdp.on('Page.frameRequestedNavigation', (e) => { mailto = e.url; });
-await p.click('#contact-form button[type="submit"]'); await sleep(800);
-check('form opens an email to TJ', mailto.startsWith('mailto:tj@smashswing.golf?subject=') && decodeURIComponent(mailto).includes('Venue or company: Test Golf Club'));
 await p.close();
 
 check('no console errors or failed requests', !errs.length, errs.join(' | '));
